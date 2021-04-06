@@ -51,7 +51,7 @@ if ($guess != false)
     
     print "<hr />";
     print "The number you input is $guess <br />";
-    print "The numbers guessed so far: $number <br />";
+    print "The numbers guessed so far: $n <br />";
 
     if ($guess == $rand)
     {
