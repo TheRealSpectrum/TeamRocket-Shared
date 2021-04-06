@@ -1,0 +1,33 @@
+html {
+    margin: 0 auto;
+    padding: 0;
+    background-color: lightblue;
+    background-image: url(img/quiz_background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0px;
+}
+body {
+    font: 100% Arial, Helvetica, sans-serif;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 500px;
+    padding-top: 30px;
+    padding-bottom: 500px;
+    background: #ebe2e2;
+    border-top: 10px solid royalblue;
+    border-bottom: 10px solid royalblue;
+    border-radius: 30px;
+    max-width: 950px;
+}
+h1 {
+    margin-left: 20px;
+}
+fieldset {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+input[type=text] {
+    border-radius: 10px;
+}
