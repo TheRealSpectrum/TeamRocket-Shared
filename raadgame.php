@@ -37,6 +37,7 @@ if($guess == $rand)
 <!DOCTYPE html>
 <html lang="EN">
 <head>
+<link rel="stylesheet" href="raadgame.css">
 <title>Thinking of a Number</title>
 </head>
 
