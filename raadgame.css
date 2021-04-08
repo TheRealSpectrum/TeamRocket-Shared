@@ -16,18 +16,42 @@ body {
     padding-top: 30px;
     padding-bottom: 500px;
     background: #ebe2e2;
-    border-top: 10px solid royalblue;
-    border-bottom: 10px solid royalblue;
+    border-top: 5px solid royalblue;
+    border-bottom: 5px solid royalblue;
     border-radius: 30px;
     max-width: 950px;
 }
 h1 {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 10px;
+    padding-left: 50px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+p {
     margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 fieldset {
     margin-left: 20px;
     margin-right: 20px;
+    border-radius: 10px;
+}
+label {
+    font-size: 20px;
+    margin-left: 32%;
 }
 input[type=text] {
     border-radius: 10px;
 }
+button[type=submit] {
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 45%;
+}
+button[type=submit]:hover {
+    transition-duration: 0.5s;
+    background-color: royalblue;
+} 

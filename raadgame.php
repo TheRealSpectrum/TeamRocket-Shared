@@ -56,20 +56,20 @@ if ($guess != false)
 
     if ($guess == $rand)
     {
-        print "You are correct <br />";
-        print "You guessed it in ".$counter." attempt(s).";
+        print "<p>You are correct </p><br />";
+        print "<p>You guessed it in ".$counter." attempt(s).</p>";
     }
     else if ($guess != $rand)
     {
         if($guess > $rand)
         {
-            print "You are too high. <br />";
-            print "Try again";
+            print "<p>You are too high. </p><br />";
+            print "<p>Try again</p>";
         }
         else if ($guess < $rand)
         {
-            print "You are too low. <br />";
-            print "Try again";
+            print "<p>You are too low. </p><br />";
+            print "<p>Try again</p>";
         }
     }
 }
