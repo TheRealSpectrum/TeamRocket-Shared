@@ -104,6 +104,5 @@ The Guess: <?php echo htmlspecialchars($guess); ?>
 
 
 -->
-<?php echo $_SESSION["the_number"]?>
 </body>
 </html>
