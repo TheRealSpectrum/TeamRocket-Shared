@@ -8,6 +8,7 @@ html {
     background-position: center;
     background-position-y: 0px;
 }
+
 body {
     font: 100% Arial, Helvetica, sans-serif;
     width: 70%;
@@ -21,6 +22,7 @@ body {
     border-radius: 30px;
     max-width: 950px;
 }
+
 h1 {
     margin-left: 20%;
     margin-right: 20%;
@@ -29,28 +31,55 @@ h1 {
     background-color: lightblue;
     border-radius: 10px;
 }
+
 p {
     margin-left: 20px;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.Restart_button {
+    margin-left: 380px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 210px;
+    text-align: center;
+}
+
+.Restart_button a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    
+}
+
+.you_right {
+    margin-left: 340px;
 }
 fieldset {
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10px;
 }
+
 label {
     font-size: 20px;
     margin-left: 32%;
 }
+
 input[type=text] {
     border-radius: 10px;
 }
+
 button[type=submit] {
     margin-top: 10px;
     font-size: 20px;
     margin-left: 45%;
 }
+
 button[type=submit]:hover {
     transition-duration: 0.5s;
     background-color: royalblue;

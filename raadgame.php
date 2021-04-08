@@ -87,7 +87,11 @@ if ($guess != false)
     </fieldset>
 </form>
 <?php else: ?>
-<a href="raadgame.php">Press Here to Restart</a>
+    <img class="you_right" src="img/you're goddamn right.jpeg">
+    <section class="Restart_button">
+        <a href="raadgame.php">Press Here to Restart</a>
+    </section>
+    
 <?php endif; ?>
 
 <!--
@@ -100,6 +104,6 @@ The Guess: <?php echo htmlspecialchars($guess); ?>
 
 
 -->
-
+<?php echo $_SESSION["the_number"]?>
 </body>
 </html>
