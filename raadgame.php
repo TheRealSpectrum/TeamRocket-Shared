@@ -16,6 +16,10 @@ else
 {
     $_SESSION['counter']++;
 }
+if(!isset($_SESSION['guess']))
+{
+    $_SESSION["guess"] = array();
+}
 
 $rand = $_SESSION['the_number'];
 $counter = $_SESSION['counter'];
