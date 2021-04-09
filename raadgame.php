@@ -16,15 +16,24 @@ else
 {
     $_SESSION['counter']++;
 }
-if(!isset($_SESSION['guess']))
+
+$guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
+
+// Elke keer als je op de submit button drukt (regel 104), wordt het bestand raadgame.php opnieuw getriggered.
+// Dit will zeggen dat $guesses = []; elke keer opnieuw wordt defined. En dus elke keer opnieuw leeg wordt aangemaakt.
+// De array zal ook een $_SESSION moeten worden. 
+$guesses  = [];
+
+
+if(isset($_SESSION['guess']))
 {
-    $_SESSION["guess"] = array();
+    $_SESSION["guess"] = $guess;
+    // Push guess in array guesses
+    array_push($guesses, $_SESSION["guess"]);
 }
 
 $rand = $_SESSION['the_number'];
 $counter = $_SESSION['counter'];
-$guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
-$guesses = $_SESSION['guess'];
 
 
 if($guess == $rand)
@@ -57,7 +66,9 @@ if ($guess != false)
     
     print "<hr />";
     print "<p>The number you input is $guess </p><br />";
-    print "<p>The numbers guessed so far: $guesses </p><br />";
+    print "<p> Your array is";
+    print_r($guesses);
+    print "</p>";
 
     if ($guess == $rand)
     {
