@@ -24,6 +24,7 @@ if(!isset($_SESSION['guess']))
 $rand = $_SESSION['the_number'];
 $counter = $_SESSION['counter'];
 $guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
+$guesses = $_SESSION['guess'];
 
 
 if($guess == $rand)
@@ -56,7 +57,7 @@ if ($guess != false)
     
     print "<hr />";
     print "<p>The number you input is $guess </p><br />";
-    print "<p>The numbers guessed so far: $number </p><br />";
+    print "<p>The numbers guessed so far: $guesses </p><br />";
 
     if ($guess == $rand)
     {
