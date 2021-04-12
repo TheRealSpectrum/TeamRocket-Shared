@@ -22,7 +22,7 @@ $guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
 // Elke keer als je op de submit button drukt (regel 104), wordt het bestand raadgame.php opnieuw getriggered.
 // Dit will zeggen dat $guesses = []; elke keer opnieuw wordt defined. En dus elke keer opnieuw leeg wordt aangemaakt.
 // De array zal ook een $_SESSION moeten worden. 
-$guesses  = [];
+$guesses  = array();
 
 
 if(isset($_SESSION['guess']))
@@ -66,7 +66,7 @@ if ($guess != false)
     
     print "<hr />";
     print "<p>The number you input is $guess </p><br />";
-    print "<p> Your array is";
+    print "<p>The numbers you have guessed so far: ";
     print_r($guesses);
     print "</p>";
 
