@@ -68,7 +68,7 @@ if ($guess != false)
     print "<p>The number you input is $guess </p><br />";
     print "<p>The numbers you have guessed so far: ";
     print_r($guesses);
-    print "</p>";
+    print "</p><br>";
 
     if ($guess == $rand)
     {
