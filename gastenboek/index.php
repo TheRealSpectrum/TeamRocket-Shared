@@ -13,6 +13,7 @@
 
 <?php
 $guests = fopen("guests.txt", "r") or die("Unable to open file!");
-echo fread($guests,filesize("guests.txt"));
+echo "<br>";
+echo nl2br( file_get_contents('guests.txt') );
 fclose($guests);
 ?>
