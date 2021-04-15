@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="EN">
 <head>
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="styles.css">
 <title>Guestbook</title>
 </head>
 <body>

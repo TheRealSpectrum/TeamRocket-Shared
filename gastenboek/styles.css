@@ -3,8 +3,6 @@ html {
     padding: 0;
     background-color: blue;
     background-image: url(../img/Space_background.jpg);
-    background-position: center;
-    background-size: 100%;
 }
 body {
     font: 100% Arial, Helvetica, sans-serif;
