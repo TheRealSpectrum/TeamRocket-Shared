@@ -5,19 +5,19 @@
 <title>Guestbook</title>
 </head>
 <body>
-<a href="index.php" class="gb-link"><p>View Guestbook</p></a>
-<a href="form.php" class="msg-link"><p>Leave a Message</p></a>
-<form name="form" class="" action="form.php" method="post">
-    <fieldset>
-        <label>Name</label>
-        <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
-        <label>Email</label>
-        <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
-        <label>Message</label>
-        <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
-        <button type="submit">Submit</button>
-    </fieldset>
-</form>
+    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
+    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
+    <form name="form" class="" action="form.php" method="post">
+        <fieldset>
+            <label>Name</label>
+            <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
+            <label>Email</label>
+            <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
+            <label>Message</label>
+            <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
 </body>
 </html>
 
