@@ -1,27 +1,26 @@
-<h1>My Guestbook</h1>
-<a href="index.php" class="gb-link"><p>View Guestbook</p></a>
-<p class="divider">|</p>
-<a href="form.php" class="msg-link"><p>Leave a Message</p></a>
-<form name="form" class="" action="form.php" method="post">
-  <label for="">
-    <h5>Name</h5>
-    <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
-    <br>
-  </label>
-  <label for="">
-    <h5>Email</h5>
-    <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
-    <br>
-  </label>
-  <label for="">
-    <h5>Message</h5>
-    <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
-    <br>
-  </label>
-  <br>
-  <input class="submit" type="submit" name="submit" value="Submit">
-</form>
-<p>
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+<link rel="stylesheet" href="">
+<title>Guestbook</title>
+</head>
+<body>
+    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
+    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
+    <form name="form" class="" action="form.php" method="post">
+        <fieldset>
+            <label>Name</label>
+            <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
+            <label>Email</label>
+            <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
+            <label>Message</label>
+            <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
+
 <?php
   if ($_POST['name'] != "") {
     $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
@@ -73,4 +72,3 @@
       echo '<div style="color: red">' . $errors . '<br/></div>';
   }
 ?>
-</p>
