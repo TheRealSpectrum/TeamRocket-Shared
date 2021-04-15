@@ -9,12 +9,18 @@
     <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
+          <section class="one">
             <label>Name</label>
             <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
+          </section>
+          <section class="two">
             <label>Email</label>
             <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
+          </section>
+          <section class="three">
             <label>Message</label>
             <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
+          </section>
             <button type="submit">Submit</button>
         </fieldset>
     </form>
