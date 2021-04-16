@@ -2,9 +2,9 @@ html {
     margin: 0 auto;
     padding: 0;
     background-color: blue;
-    background-image: url(../img/Space_background.jpeg);
+    background-image: url(../img/Space_Background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 2000px 1000px;
 }
 body {
     font: 100% Arial, Helvetica, sans-serif;
@@ -21,24 +21,38 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin-left: 20px;
 }
-p {
+a {
+    text-decoration: none;
     margin-left: 20px;
+    background-color: royalblue;
+    border-color: 10px solid royalblue;
+    width: 160px;
+}
+p {
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 fieldset {
     display: inline;
     margin-left: 10px;
+}
+.one {
+    margin-left: 20px;
 }
 .one input {
     margin-left: 43px;
 }
 .two {
     margin-top: 10px;
+    margin-left: 20px;
 }
 .two input {
     margin-left: 45px;
 }
 .three {
     margin-top: 10px;
+    margin-left: 20px;
 }
 textarea {
     margin-left: 20px;

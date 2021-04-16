@@ -6,8 +6,8 @@
 </head>
 <body>
   <h1>Guestbook</h1>
-  <a href="index.php" class="gb-link">View Guestbook</a>
-  <a href="form.php" class="msg-link">Leave a Message</a>
+    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
+    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
 </body>
 </html>
 
