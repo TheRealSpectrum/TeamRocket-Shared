@@ -62,17 +62,16 @@
   }
 
   if (!$errors) {
-      $guests = fopen('guests.txt', 'a+')
-        OR die ("Can't open file\n");
-      fwrite ($guests, "<p>User: " . $_POST["name"] . "</p>" . "\n");
-      fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
-      fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
-      fclose($guests);
-
-      header('Location: index.php');
-      exit;
-  }
-  else {
-      echo '<div style="color: red">' . $errors . '<br/></div>';
-  }
+    $guests = fopen('guests.txt', 'a+')
+    OR die ("Can't open file\n");
+    fwrite ($guests, "<p>User: " . $_POST["name"] . "</p>" . "\n");
+    fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
+    fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
+    fclose($guests);
+    header('Location: index.php');
+    exit;
+}
+else {
+    echo '<div style="color: red">' . $errors . '<br/></div>';
+}
 ?>
