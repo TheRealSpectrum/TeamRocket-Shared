@@ -20,9 +20,23 @@ if(!isset($_SESSION['guess'])){
     $_SESSION['guess'] = array();
 }
 
+$guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
+
+// Elke keer als je op de submit button drukt (regel 104), wordt het bestand raadgame.php opnieuw getriggered.
+// Dit will zeggen dat $guesses = []; elke keer opnieuw wordt defined. En dus elke keer opnieuw leeg wordt aangemaakt.
+// De array zal ook een $_SESSION moeten worden. 
+//$guesses  = array();
+
+
+//if(isset($_SESSION['guess']))
+//{
+//    $_SESSION["guess"] = $guess;
+//    // Push guess in array guesses
+//    array_push($guesses, $_SESSION["guess"]);
+//}
+
 $rand = $_SESSION['the_number'];
 $counter = $_SESSION['counter'];
-$guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
 
 
 if($guess == $rand)
@@ -55,6 +69,10 @@ if ($guess != false)
     print "<hr />";
     print "The number you input is $guess <br />";
     print "The numbers guessed so far:" . $_SESSION['guess'] . "<br />";
+    print "<p>The number you input is $guess </p><br />";
+//    print "<p>The numbers you have guessed so far: ";
+ //   print_r($guesses);
+ //   print "</p><br>";
 
     if ($guess == $rand)
     {
@@ -89,8 +107,25 @@ if ($guess != false)
     </fieldset>
 </form>
 <?php else: ?>
-<a href="raadgame.php">Press Here to Restart</a>
+    <img class="you_right" src="img/you're goddamn right.jpeg">
+    <section class="Restart_button">
+        <a href="raadgame.php">Press Here to Restart</a>
+    </section>
+    
 <?php endif; ?>
 
+<<<<<<< HEAD
+=======
+<!--
+
+The Random Number: <?php echo $rand; ?>
+
+The Counter: <?php echo $counter; ?>
+
+The Guess: <?php echo htmlspecialchars($guess); ?>
+
+
+-->
+>>>>>>> main
 </body>
 </html>
