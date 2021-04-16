@@ -21,14 +21,24 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin-left: 20px;
 }
+fieldset {
+    display: inline;
+}
+.two {
+    margin-top: 10px;
+}
+.three {
+    margin-top: 10px;
+}
 input[type=text] {
     margin-left: 20px;
 }
 textarea {
     margin-left: 20px;
 }
-input[type=submit]{
-    margin-left: 20px;
+button[type=submit]{
+    margin-left: 200px;
+    margin-top: 10px;
 }
 div {
     margin-left: 20px;
