@@ -5,8 +5,12 @@
 <title>Guestbook</title>
 </head>
 <body>
-    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
-    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
+    <button>
+        <a href="index.php" class="gb-link">View Guestbook</a>
+    </button>
+    <button>
+        <a href="form.php" class="msg-link">Leave a Message</a>
+    </button>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
           <section class="one">
