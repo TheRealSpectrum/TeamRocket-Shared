@@ -2,14 +2,17 @@ html {
     margin: 0 auto;
     padding: 0;
     background-color: blue;
-    background-image: url(../img/Space_background.jpg);
+    background-image: url(../img/Space_background.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 body {
     font: 100% Arial, Helvetica, sans-serif;
     width: 70%;
     margin: 0 auto;
+    margin-top: 10px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
     background: #ebe2e2;
     border-radius: 10px;
     border-top: 5px solid blue;
@@ -23,15 +26,19 @@ p {
 }
 fieldset {
     display: inline;
+    margin-left: 10px;
+}
+.one input {
+    margin-left: 43px;
 }
 .two {
     margin-top: 10px;
 }
+.two input {
+    margin-left: 45px;
+}
 .three {
     margin-top: 10px;
-}
-input[type=text] {
-    margin-left: 20px;
 }
 textarea {
     margin-left: 20px;
