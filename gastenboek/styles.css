@@ -21,12 +21,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin-left: 20px;
 }
-a {
-    text-decoration: none;
+button {
     margin-left: 20px;
+    margin-bottom: 10px;
     background-color: royalblue;
-    border-color: 10px solid royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
     width: 160px;
+    text-align: center;
+}
+a {
+    text-decoration: none; 
+    color: #ffffff;
 }
 p {
     margin-left: 30px;
@@ -60,6 +66,7 @@ textarea {
 button[type=submit]{
     margin-left: 200px;
     margin-top: 10px;
+    color: #FFFFFF;
 }
 div {
     margin-left: 20px;

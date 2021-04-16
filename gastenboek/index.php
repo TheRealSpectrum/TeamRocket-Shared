@@ -5,15 +5,42 @@
 <title>Guestbook</title>
 </head>
 <body>
-  <h1>Guestbook</h1>
-    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
-    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
 </body>
 </html>
 
-<?php
-$guests = fopen("guests.txt", "r") or die("Unable to open file!");
-echo "<br>";
-echo nl2br( file_get_contents('guests.txt') );
-fclose($guests);
-?>
+    <h1>Guestbook</h1>
+    <button>
+      <a href="index.php" class="gb-link">View Guestbook</a>
+    </button>
+    <button>
+      <a href="form.php" class="msg-link">Leave a Message</a>
+    </button>
+    <div class=messagecontainer>
+    </div>
+
+    <?php
+    
+    $guests = fopen("guests.txt", "r") or die("Unable to open file!");
+    echo file_get_contents('guests.txt');
+    fclose($guests);
+
+    function button1() {
+    // Delete all comments          WORK IN PROGRESS
+    $a = 'guests.txt';
+    $b = file_get_contents('guests.txt');
+    $c = preg_replace('guests.txt', '', $b);
+    file_put_contents($a, $c);
+    }
+
+    if(array_key_exists('delete', $_POST)) {
+      button1();
+    }
+    
+    ?>
+    
+    <form method="post">
+      <input type="submit" name="delete" class="button" value="delete all" />
+    </form>
+
+</body>
+</html>

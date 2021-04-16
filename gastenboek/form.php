@@ -5,8 +5,12 @@
 <title>Guestbook</title>
 </head>
 <body>
-    <a href="index.php" class="gb-link"><p>View Guestbook</p></a>
-    <a href="form.php" class="msg-link"><p>Leave a Message</p></a>
+    <button>
+        <a href="index.php" class="gb-link">View Guestbook</a>
+    </button>
+    <button>
+        <a href="form.php" class="msg-link">Leave a Message</a>
+    </button>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
           <section class="one">
@@ -58,23 +62,16 @@
   }
 
   if (!$errors) {
-      $mail_to = 'me@somewhere.com';
-      $subject = 'Email from Form';
-      $message  = 'From: ' . $_POST['name'] . "\n";
-      $message .= 'Email: ' . $_POST['email'] . "\n";
-      $message .= "message:\n" . $_POST['message'] . "\n\n";
-      mail($to, $subject, $message);
-      $guests = fopen('guests.txt', 'a+')
-        OR die ("Can't open file\n");
-      fwrite ($guests, $_POST["name"] . "\n");
-      fwrite ($guests, $_POST["email"] . "\n");
-      fwrite ($guests, $_POST["message"] . "\n");
-      fclose($guests);
-
-      header('Location: index.php');
-      exit;
-  }
-  else {
-      echo '<div style="color: red">' . $errors . '<br/></div>';
-  }
+    $guests = fopen('guests.txt', 'a+')
+    OR die ("Can't open file\n");
+    fwrite ($guests, "<p>User: " . $_POST["name"] . "</p>" . "\n");
+    fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
+    fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
+    fclose($guests);
+    header('Location: index.php');
+    exit;
+}
+else {
+    echo '<div style="color: red">' . $errors . '<br/></div>';
+}
 ?>

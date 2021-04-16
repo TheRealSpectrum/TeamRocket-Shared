@@ -16,6 +16,9 @@ else
 {
     $_SESSION['counter']++;
 }
+if(!isset($_SESSION['guess'])){
+    $_SESSION['guess'] = array();
+}
 
 $guess = isset($_POST['guess']) ? (int) $_POST['guess'] : false;
 
@@ -38,10 +41,9 @@ $counter = $_SESSION['counter'];
 
 if($guess == $rand)
 {
-    // If the user guessed the number, unset counter & rand number
-    // This way, on the next refresh, the game will restart
     unset($_SESSION['the_number']);
     unset($_SESSION['counter']);
+    unset($_SESSION['guess']);
 }
 
 
@@ -65,6 +67,8 @@ if ($guess != false)
 {
     
     print "<hr />";
+    print "The number you input is $guess <br />";
+    print "The numbers guessed so far:" . $_SESSION['guess'] . "<br />";
     print "<p>The number you input is $guess </p><br />";
 //    print "<p>The numbers you have guessed so far: ";
  //   print_r($guesses);
@@ -110,6 +114,8 @@ if ($guess != false)
     
 <?php endif; ?>
 
+<<<<<<< HEAD
+=======
 <!--
 
 The Random Number: <?php echo $rand; ?>
@@ -120,5 +126,6 @@ The Guess: <?php echo htmlspecialchars($guess); ?>
 
 
 -->
+>>>>>>> main
 </body>
 </html>
