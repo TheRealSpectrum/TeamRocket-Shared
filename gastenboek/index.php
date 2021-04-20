@@ -20,16 +20,20 @@
 
     <?php
     
-    $guests = fopen("guests.txt", "r") or die("Unable to open file!");
+    $guests = fopen("guests.txt", "r");
+    if(!file_exists("guests.txt")) {
+    echo "File not found";
+    } else {
     echo file_get_contents('guests.txt');
     fclose($guests);
+    }
 
     function button1() {
     // Delete all comments          WORK IN PROGRESS
-    $a = 'guests.txt';
-    $b = file_get_contents('guests.txt');
-    $c = preg_replace('guests.txt', '', $b);
-    file_put_contents($a, $c);
+      $a = 'guests.txt';
+      $b = file_get_contents('guests.txt');
+      $c = preg_replace('guests.txt', '', $b);
+      file_put_contents($a, $c);
     }
 
     if(array_key_exists('delete', $_POST)) {
