@@ -2,13 +2,13 @@
 <html lang="EN">
 <head>
 <link rel="stylesheet" href="styles.css">
-<title>Guestbook</title>
+<title>SpaceBook</title>
 </head>
 <body>
 </body>
 </html>
 
-    <h1>Guestbook</h1>
+    <h1>SpaceBook</h1>
     <button>
       <a href="index.php" class="gb-link">View Guestbook</a>
     </button>
@@ -39,9 +39,7 @@
     ?>
     
     <form method="post">
-      <button>
         <input type="submit" name="delete" class="button" value="delete all" />
-      </button>
     </form>
 
 </body>

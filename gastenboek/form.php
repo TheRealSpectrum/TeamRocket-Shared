@@ -2,7 +2,7 @@
 <html lang="EN">
 <head>
 <link rel="stylesheet" href="styles.css">
-<title>Guestbook</title>
+<title>SpaceBook</title>
 </head>
 <body>
     <button>
@@ -64,7 +64,7 @@
   if (!$errors) {
     $guests = fopen('guests.txt', 'a+')
     OR die ("Can't open file\n");
-    fwrite ($guests, "<p>User: " . $_POST["name"] . "</p>" . "\n");
+    fwrite ($guests, "<h2>User: " . $_POST["name"] . "</h2>" . "\n");
     fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
     fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
     fclose($guests);
