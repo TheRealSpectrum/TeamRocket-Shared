@@ -36,6 +36,7 @@
       file_put_contents($a, $c);
     }
 
+    // Link delete button aan functie
     if(array_key_exists('delete', $_POST)) {
       button1();
     }

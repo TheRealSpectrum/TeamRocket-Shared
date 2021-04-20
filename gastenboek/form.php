@@ -63,8 +63,10 @@
   }
 // Als er geen errors zijn, post hij de informatie naar guests file. Anders laat hij errors zien.
   if (!$errors) {
-    $guests = fopen('guests.txt', 'a+')
-    OR die ("Can't open file\n");
+    $guests = fopen('guests.txt', 'a+');
+    if(!file_exists("guests.txt")) {
+        echo "File not found";
+    }
     fwrite ($guests, "<h2>User: " . $_POST["name"] . "</h2>" . "\n");
     fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
     fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
