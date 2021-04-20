@@ -39,7 +39,9 @@
     ?>
     
     <form method="post">
-      <input type="submit" name="delete" class="button" value="delete all" />
+      <button>
+        <input type="submit" name="delete" class="button" value="delete all" />
+      </button>
     </form>
 
 </body>
