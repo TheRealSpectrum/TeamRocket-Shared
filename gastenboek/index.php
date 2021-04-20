@@ -8,6 +8,7 @@
 </body>
 </html>
 
+    <div class="banner"></div>
     <h1>SpaceBook</h1>
     <button>
       <a href="index.php" class="gb-link">View Guestbook</a>
@@ -19,7 +20,7 @@
     </div>
 
     <?php
-    
+    // Leest guests file en echoed content.
     $guests = fopen("guests.txt", "r");
     if(!file_exists("guests.txt")) {
     echo "File not found";
