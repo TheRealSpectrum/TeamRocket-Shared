@@ -15,11 +15,11 @@
         <fieldset>
           <section class="one">
             <label>Name</label>
-            <input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
+            <input pattern="^[A-Za-zÀ-ÿ ,.'-]+$" type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
           </section>
           <section class="two">
             <label>Email</label>
-            <input type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
+            <input pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
           </section>
           <section class="three">
             <label>Message</label>
@@ -32,6 +32,7 @@
 </html>
 
 <?php
+// Als er iets is ingevoerd wordt het gevalideert of anders wordt er een error weergegeven.
   if ($_POST['name'] != "") {
     $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     if ($_POST['name'] == "") {
@@ -60,10 +61,12 @@
   else {
       $errors .= 'Please enter your email address.<br/>';
   }
-
+// Als er geen errors zijn, post hij de informatie naar guests file. Anders laat hij errors zien.
   if (!$errors) {
-    $guests = fopen('guests.txt', 'a+')
-    OR die ("Can't open file\n");
+    $guests = fopen('guests.txt', 'a+');
+    if(!file_exists("guests.txt")) {
+        echo "File not found";
+    }
     fwrite ($guests, "<h2>User: " . $_POST["name"] . "</h2>" . "\n");
     fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
     fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
