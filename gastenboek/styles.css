@@ -3,7 +3,6 @@ html {
     padding: 0;
     background-color: blue;
     background-image: url(../img/Space_Background.jpg);
-    background-repeat: no-repeat;
     background-size: 2000px 1000px;
 }
 body {
@@ -11,6 +10,7 @@ body {
     width: 70%;
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 30px;
     padding-bottom: 100px;
     background: #ebe2e2;
@@ -20,6 +20,8 @@ body {
 }
 h1, h3, h4, h5, h6 {
     margin-left: 20px;
+    text-align: center;
+    color: royalblue;
 }
 h2 {
     margin-left: 20px;
@@ -40,7 +42,16 @@ button {
     border: 3px solid royalblue;
     border-radius: 70px;
     width: 160px;
+    height: 30px;
     text-align: center;
+}
+button:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 a {
     text-decoration: none; 
@@ -50,6 +61,7 @@ p {
     margin-left: 30px;
     margin-top: 10px;
     font-size: 20px;
+    max-width: 900px;
 }
 fieldset {
     display: inline;
@@ -76,11 +88,22 @@ fieldset {
     margin-left: 20px;
     margin-bottom: 10px;
     color: #ffffff;
-    background-color: crimson;
-    border: 3px solid crimson;
+    background-color: royalblue;
+    border: 3px solid royalblue;
     border-radius: 70px;
     width: 160px;
+    height: 30px;
     text-align: center;
+}
+.button:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: crimson;
+    border: 3px solid crimson;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 textarea {
     margin-left: 20px;
