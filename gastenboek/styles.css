@@ -93,6 +93,10 @@ button[type=submit]{
 div {
     margin-left: 20px;
 }
+.bannercontainer {
+    display: flex;
+    justify-content: center;
+}
 .banner {
     background-image: url(../img/space_memes_018.jpg);
     background-repeat:no-repeat;

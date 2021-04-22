@@ -8,7 +8,9 @@
 </body>
 </html>
 
-    <div class="banner"></div>
+    <div class="bannercontainer">
+      <div class="banner"></div>
+    </div>
     <h1>SpaceBook</h1>
     <button>
       <a href="index.php" class="gb-link">View Guestbook</a>
