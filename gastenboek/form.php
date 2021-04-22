@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="styles.css">
 <title>SpaceBook</title>
+<?php include "functies.php" ?>
 </head>
 <body>
     <button>
@@ -32,6 +33,7 @@
 </html>
 
 <?php
+
 // Als er iets is ingevoerd wordt het gevalideert of anders wordt er een error weergegeven.
   if ($_POST['name'] != "") {
     $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
@@ -61,20 +63,6 @@
   else {
       $errors .= 'Please enter your email address.<br/>';
   }
-// Als er geen errors zijn, post hij de informatie naar guests file. Anders laat hij errors zien.
-  if (!$errors) {
-    $guests = fopen('guests.txt', 'a+');
-    if(!file_exists("guests.txt")) {
-        echo "File not found";
-    }
-    fwrite ($guests, "<h2>User: " . $_POST["name"] . "</h2>" . "\n");
-    fwrite ($guests, "<p>E-mail: " . $_POST["email"] . "</p>" . "\n");
-    fwrite ($guests, "<p>" . $_POST["message"] . "</p>" . "\n");
-    fclose($guests);
-    header('Location: index.php');
-    exit;
-}
-else {
-    echo '<div style="color: red">' . $errors . '<br/></div>';
-}
+  messageBoard();
+  posting()
 ?>
