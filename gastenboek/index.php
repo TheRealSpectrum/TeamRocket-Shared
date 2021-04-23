@@ -30,10 +30,7 @@
         <button type="submit">Post a message</button>
     </form>
     
-    <?php
-    $messages = file_get_contents('guests.txt');
-    echo $messages;
-    ?>
+    <?php showPosts(); ?>
 
     <form action="index.php" method="post">
         <input type="hidden" name="deleteAll">

@@ -84,4 +84,15 @@ function deleteAll(){
 }
 // Delete everything inside a file
 
+function showPosts(){
+    $messages = file_get_contents('guests.txt');
+    echo $messages;
+}
+// Show text file
+
+function deleteSingle(){
+    $a = 'guests.txt';
+    $b = file_get_contents('guests.txt');
+}
+// W.I.P
 ?>
