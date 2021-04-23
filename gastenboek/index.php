@@ -8,7 +8,6 @@
 <body>
 
     <?php session();?>
-    <?php loggedIn();?>
 
     <div class="bannercontainer">
       <div class="banner"></div>
@@ -19,6 +18,9 @@
         <label for="password">Password: </label><input type="password" name="password">
         <input type="submit">
     </form>
+
+    <?php loggedIn();?>
+    
     <form action="index.php" method="post">
         <input type="hidden" name="reset">
         <button type="submit">log-out</button>
@@ -34,17 +36,21 @@
     ?>
 
     <form action="index.php" method="post">
-        <input type="hidden" name="delete">
+        <input type="hidden" name="deleteAll">
         <button class="button" type="submit">Delete all</button>
     </form>
 
     <?php
-
-    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['delete']))
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['deleteAll']))
     {
         deleteAll();
     }
+    // Linking deleteAll button to the function
 
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['delete']))
+    {
+        delete($id);
+    }
     ?>
 
 </body>

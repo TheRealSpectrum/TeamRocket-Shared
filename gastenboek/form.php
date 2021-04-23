@@ -6,61 +6,21 @@
 <?php include "functies.php" ?>
 </head>
 <body>
+
+    <?php session_start(); ?>
+    <?php loggedIn(); ?>
+
     <button>
         <a href="index.php" class="gb-link">View Guestbook</a>
     </button>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
-          <section class="one">
-            <label>Name</label>
-            <input pattern="^[A-Za-zÀ-ÿ ,.'-]+$" type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Name">
-          </section>
-          <section class="two">
-            <label>Email</label>
-            <input pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="text" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email">
-          </section>
-          <section class="three">
             <label>Message</label>
             <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
-          </section>
             <button type="submit">Submit</button>
         </fieldset>
     </form>
 </body>
 </html>
 
-<?php
-
-  if ($_POST['name'] != "") {
-    $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-    if ($_POST['name'] == "") {
-         $errors .= 'Please enter a valid name.<br/>';
-     }
-    }
-  else {
-      $errors .= 'Please enter your name.<br/>';
-  }
-
-  if ($_POST['message'] != "") {
-      $_POST['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-      if ($_POST['message'] == "") {
-          $errors .= 'Please enter your message.<br/>';
-      }
-  }
-  else {
-      $errors .= 'Please enter your message.<br/>';
-  }
-  if ($_POST['email'] != "") {
-      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $errors .= "$email is <strong>NOT</strong> a valid email address.<br/><br/>";
-      }
-  }
-  else {
-      $errors .= 'Please enter your email address.<br/>';
-  }
-// Validates form input and shows errors
-
-gastenboek();
-
-?>
+<?php gastenboek(); ?>

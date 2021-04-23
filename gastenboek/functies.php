@@ -28,7 +28,7 @@ function delete($id){
     fwrite($messagesFile, $content);
     fclose($messagesFile);
 }
-// Adds an id to the message
+// Deletes an id inside a file
 
 function getHeighestID(){
     $textFile = fopen("guests.txt", "r");
@@ -46,10 +46,8 @@ function getHeighestID(){
 
 function gastenboek() {
     if (isset($_POST["message"])) {
-        $message = "<p>" . $_POST["message"] . "</p>";
-        $user = "<h2>Username: " . $_POST["name"] . "</h2>"; 
-        $email = "<h3>E-mail: " . $_POST["email"] . "<h3>";
-        $post = '<div id="' . getHeighestID() . '">' . $_SESSION["username"] . ' * ' .  $message . ' * <form action="index.php" method="post"><button name="delete" value="' . getHeighestID() . '">delete</button></form></div>' . "\r\n";
+        $message = $_POST["message"];
+        $post = '<div id="' . getHeighestID() . '">' . "<h2>" . $_SESSION["username"] . "</h2>" . ' * ' .  "<p>" . $message . "</p>" . ' * <form action="index.php" method="post"><button name="delete" value="' . getHeighestID() . '">delete</button></form></div>' . "\r\n";
         $messageFile = fopen("guests.txt", "r");
 
         $content = "";
@@ -58,7 +56,7 @@ function gastenboek() {
         fclose($messageFile);
 
         $archive = fopen("guests.txt", "w");
-        fwrite($archive, $user . $email . $content . $post);
+        fwrite($archive, $content . $post);
         fclose($archive);
         header("Location:index.php");
     }
