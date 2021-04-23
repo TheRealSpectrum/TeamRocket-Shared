@@ -17,6 +17,8 @@ body {
     border-radius: 10px;
     border-top: 5px solid blue;
     border-bottom: 5px solid blue;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
     opacity: 0.8;
 }
 h1, h3, h4, h5, h6 {
@@ -71,6 +73,31 @@ fieldset {
     display: inline;
     margin-left: 10px;
 }
+form label {
+    font-size: 20px;
+}
+form input[type=submit] {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #ffffff;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+form input[type=submit]:hover {
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+form button {
+    margin-top: 10px;
+    color: #ffffff;
+}
 .one {
     margin-left: 20px;
 }
@@ -112,13 +139,13 @@ fieldset {
 textarea {
     margin-left: 20px;
 }
-button[type=submit]{
+fieldset button[type=submit]{
     margin-left: 200px;
     margin-top: 10px;
     color: #FFFFFF;
 }
 div {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .bannercontainer {
     display: flex;
