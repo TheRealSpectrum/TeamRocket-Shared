@@ -17,6 +17,7 @@ body {
     border-radius: 10px;
     border-top: 5px solid blue;
     border-bottom: 5px solid blue;
+    opacity: 0.8;
 }
 h1, h3, h4, h5, h6 {
     margin-left: 20px;
@@ -62,6 +63,9 @@ p {
     margin-top: 10px;
     font-size: 20px;
     max-width: 900px;
+}
+form {
+    margin-left: 20px;
 }
 fieldset {
     display: inline;
