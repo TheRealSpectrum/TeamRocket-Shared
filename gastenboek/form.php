@@ -9,9 +9,6 @@
     <button>
         <a href="index.php" class="gb-link">View Guestbook</a>
     </button>
-    <button>
-        <a href="form.php" class="msg-link">Leave a Message</a>
-    </button>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
           <section class="one">
@@ -34,7 +31,6 @@
 
 <?php
 
-// Als er iets is ingevoerd wordt het gevalideert of anders wordt er een error weergegeven.
   if ($_POST['name'] != "") {
     $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     if ($_POST['name'] == "") {
@@ -63,6 +59,8 @@
   else {
       $errors .= 'Please enter your email address.<br/>';
   }
-  gastenboek();
-  posting()
+// Validates form input and shows errors
+
+gastenboek();
+
 ?>

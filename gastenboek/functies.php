@@ -6,11 +6,13 @@ function session(){
         session_destroy();
     }
 }
+// Starts the session and destroys it when logout button is clicked
 
 function loggedIn(){
     if (isset($_POST["username"]))
         $_SESSION["username"] = $_POST["username"];
 }
+// Ties username POST to SESSION
 
 function delete($id){
     $regex = '/<div id="' . $id . '".*?<\/div>/';
@@ -26,6 +28,7 @@ function delete($id){
     fwrite($messagesFile, $content);
     fclose($messagesFile);
 }
+// Adds an id to the message
 
 function getHeighestID(){
     $textFile = fopen("guests.txt", "r");
@@ -39,12 +42,13 @@ function getHeighestID(){
     $id++;
     return $id;
 }
+// Tracks id number for the messages
 
 function gastenboek() {
     if (isset($_POST["message"])) {
-        $message = $_POST["message"];
-        $user = $_POST["name"];
-        $email = $_POST["email"];
+        $message = "<p>" . $_POST["message"] . "</p>";
+        $user = "<h2>Username: " . $_POST["name"] . "</h2>"; 
+        $email = "<h3>E-mail: " . $_POST["email"] . "<h3>";
         $post = '<div id="' . getHeighestID() . '">' . $_SESSION["username"] . ' * ' .  $message . ' * <form action="index.php" method="post"><button name="delete" value="' . getHeighestID() . '">delete</button></form></div>' . "\r\n";
         $messageFile = fopen("guests.txt", "r");
 
@@ -56,9 +60,10 @@ function gastenboek() {
         $archive = fopen("guests.txt", "w");
         fwrite($archive, $user . $email . $content . $post);
         fclose($archive);
+        header("Location:index.php");
     }
 }
-// Lezen en opslaan van het bestand
+// Stores everything from the form into a text file
 
 function posting(){
     $messages = file_get_contents('guests.txt');
@@ -71,12 +76,14 @@ function posting(){
         $messages = noRemovebtn($messages);
     echo $messages;
 }
+// Username check
 
-function button1() {
-    // Delete all comments          WORK IN PROGRESS
-      $a = 'guests.txt';
-      $b = file_get_contents('guests.txt');
-      $c = preg_replace('guests.txt', '', $b);
-      file_put_contents($a, $c);
+function deleteAll(){
+    $a = 'guests.txt';
+    $b = file_get_contents('guests.txt');
+    $c = preg_replace($a, '', $b);
+    file_put_contents($a, $c);
 }
+// Delete everything inside a file
+
 ?>
