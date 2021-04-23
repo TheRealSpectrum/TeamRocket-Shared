@@ -40,7 +40,7 @@ function getHeighestID(){
     return $id;
 }
 
-function messageBoard() {
+function gastenboek() {
     if (isset($_POST["message"])) {
         $message = $_POST["message"];
         $user = $_POST["name"];
@@ -48,18 +48,17 @@ function messageBoard() {
         $post = '<div id="' . getHeighestID() . '">' . $_SESSION["username"] . ' * ' .  $message . ' * <form action="index.php" method="post"><button name="delete" value="' . getHeighestID() . '">delete</button></form></div>' . "\r\n";
         $messageFile = fopen("guests.txt", "r");
 
-        // Leest bericht
         $content = "";
         while(! feof($messageFile))
             $content .= fgets($messageFile);
         fclose($messageFile);
 
-        // Slaat bericht op in nieuw bestand
         $archive = fopen("guests.txt", "w");
         fwrite($archive, $user . $email . $content . $post);
         fclose($archive);
     }
 }
+// Lezen en opslaan van het bestand
 
 function posting(){
     $messages = file_get_contents('guests.txt');

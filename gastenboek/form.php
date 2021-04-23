@@ -63,6 +63,6 @@
   else {
       $errors .= 'Please enter your email address.<br/>';
   }
-  messageBoard();
+  gastenboek();
   posting()
 ?>
