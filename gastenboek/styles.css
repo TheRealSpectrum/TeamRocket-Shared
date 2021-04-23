@@ -122,7 +122,8 @@ div {
 }
 .bannercontainer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .banner {
     background-image: url(../img/space_memes_018.jpg);
