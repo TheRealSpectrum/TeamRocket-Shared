@@ -13,23 +13,6 @@ function loggedIn(){
         $_SESSION["username"] = $_POST["username"];
 }
 // Ties username POST to SESSION
-
-function delete($id){
-    $regex = '/<div id="' . $id . '".*?<\/div>/';
-    $content = "";
-    $file = file("guests.txt");
-
-    for ($i = 0; $i < count($file); $i++)
-        if (!preg_match($regex, $file[$i]))
-            $content = $content . $file[$i];
-    
-    
-    $messagesFile = fopen("guests.txt", "w");
-    fwrite($messagesFile, $content);
-    fclose($messagesFile);
-}
-// Deletes an id inside a file
-
 function getHeighestID(){
     $textFile = fopen("guests.txt", "r");
     $id = 0;
@@ -62,19 +45,6 @@ function gastenboek() {
     }
 }
 // Stores everything from the form into a text file
-
-function posting(){
-    $messages = file_get_contents('guests.txt');
-    if (isset($_SESSION["username"]))
-        if (!isAdmin($_SESSION["username"])){
-            $messages = noRemovebtn($messages);
-            $messages = poster($messages);
-        }
-    if (!isset($_SESSION["username"]))
-        $messages = noRemovebtn($messages);
-    echo $messages;
-}
-// Username check
 
 function deleteAll(){
     $a = 'guests.txt';
