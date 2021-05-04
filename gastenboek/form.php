@@ -15,8 +15,12 @@
     </button>
     <form name="form" class="" action="form.php" method="post">
         <fieldset>
+        <section>
             <label>Message</label>
+        </section>
+        <section>
             <textarea name="message" rows="8" cols="40" value="<?php echo $_POST['message']; ?>" placeholder="message"></textarea>
+        </section>
             <button type="submit">Submit</button>
         </fieldset>
     </form>
