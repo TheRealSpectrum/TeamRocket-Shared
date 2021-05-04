@@ -1,0 +1,264 @@
+html {
+    margin: 0 auto;
+    padding: 0;
+    background-color: blue;
+    background-image: url(../img/Space_Background.jpg);
+    background-size: 2000px 1000px;
+}
+body {
+    font: 100% Arial, Helvetica, sans-serif;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #ebe2e2;
+    border-radius: 10px;
+    border-top: 5px solid blue;
+    border-bottom: 5px solid blue;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    opacity: 0.8;
+}
+h1, h3, h4, h5, h6 {
+    margin-left: 20px;
+    text-align: center;
+    color: royalblue;
+}
+h2 {
+    margin-left: 20px;
+    background-image: url(../img/Space.jpeg);
+    background-repeat: none;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 420px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+button {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+button:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+a {
+    text-decoration: none; 
+    color: #ffffff;
+}
+p {
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    max-width: 900px;
+}
+form {
+    margin-left: 20px;
+}
+fieldset {
+    display: inline;
+    margin-left: 10px;
+}
+form label {
+    font-size: 20px;
+}
+form input[type=submit] {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #ffffff;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+form input[type=submit]:hover {
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+form button {
+    margin-top: 10px;
+    color: #ffffff;
+}
+.one {
+    margin-left: 20px;
+}
+.one input {
+    margin-left: 43px;
+}
+.two {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.two input {
+    margin-left: 45px;
+}
+.three {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.button {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+.button:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: crimson;
+    border: 3px solid crimson;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+textarea {
+    margin-left: 20px;
+}
+fieldset button[type=submit]{
+    margin-left: 200px;
+    margin-top: 10px;
+    color: #FFFFFF;
+}
+div {
+    margin-left: 10px;
+}
+.bannercontainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.banner {
+    background-image: url(../img/space_memes_018.jpg);
+    background-repeat:no-repeat;
+    background-size: contain;
+    height: 300px;
+    width: 300px;
+}
+.navcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+    background-color: white;
+    margin-left: 0px;
+    padding: 15px;
+}
+.navcontainer img {
+    height: 100%;
+}
+.maincontainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.signup-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-form h2 {
+    width: 100%;
+    padding: 15px;
+    margin: 30px;
+}
+.login-form h2 {
+    width: 100%;
+    padding: 15px;
+    margin: 30px;
+}
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+.signup {
+    margin: 0px;
+    width: 100%;
+}
+.login {
+    margin: 0px;
+    width: 100%;
+}
+.signup input {
+    width: 75%;
+}
+.signup button {
+    margin: 20px;
+}
+.login button {
+    margin: 20px;
+}
+.login input {
+    width: 75%;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ul li a {
+    color: black;
+    font-size: larger;
+    padding: 15px;
+}
+footer {
+    background-color: white;
+    text-align: center;
+}
+footer p {
+    margin: 0px;
+    max-width: unset;
+}
+.message form {
+    display: flex;
+    flex-direction: column;
+}
+.message form textarea {
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+}
