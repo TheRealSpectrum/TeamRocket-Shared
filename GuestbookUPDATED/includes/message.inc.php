@@ -1,15 +1,20 @@
-<?php session_start() ?>
 <?php
 
-if (isset($_POST["messageform"])) {
+if (isset($_POST["submit"])) {
 
-    $username = $_SESSION["useruid"];
-    $message = $_POST["messageform"];
+    $username = $_POST["uid"];
+    $date = $_POST["date"];
+    $message = $_POST["message"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    createMessage($conn, $username, $message);
+    if (emptyInputMessage($username, $message) !== false) {
+        header("location: ../message.php?error=emptyinput");
+        exit();
+    }
+
+    setComments($conn, $username, $date, $message);
 
 }
 else {

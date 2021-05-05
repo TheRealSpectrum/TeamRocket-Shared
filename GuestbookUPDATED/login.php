@@ -12,14 +12,17 @@
     </div>
     <?php
     if (isset($_GET["error"])) {
-        if ($_GET["error"] == "emtpyinput") {
+        if ($_GET["error"] == "emptyinput") {
             echo "<p>Fill in all fields</p>";
         }
         else if ($_GET["error"] == "wronglogin") {
             echo "<p>Incorrect login</p>";
         }
     }
+    // Login form met foutmeldingen.
+    // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
+    
 </section>
 
 <?php include_once 'footer.php'; ?>
