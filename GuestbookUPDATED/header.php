@@ -11,6 +11,7 @@
     <nav>
         <div class="navcontainer">
             <a href="index.php"><img src="assets/img/logo.jpg" alt="SpaceBook logo"></a>
+            <h2>SpaceBook</h2>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <?php
@@ -22,8 +23,8 @@
                     echo "<li><a href='signup.php'>Sign up</a></li>";
                     echo "<li><a href='login.php'>Log in</a></li>";
                 }
-
-                // Veranderd de navigatie als je ingelogd bent.
+                // Begint de html met navigatie.
+                // Verander de navigatie als je ingelogd bent.
                 ?>
             </ul>
         </div>

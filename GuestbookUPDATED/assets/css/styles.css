@@ -1,18 +1,16 @@
 html {
     margin: 0 auto;
     padding: 0;
-    background-color: blue;
     background-image: url(../img/Space_Background.jpg);
-    background-size: 2000px 1000px;
 }
 body {
     font: 100% Arial, Helvetica, sans-serif;
-    width: 70%;
-    margin: 0 auto;
+    width: 75%;
+    margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: #ebe2e2;
     border-radius: 10px;
     border-top: 5px solid blue;
@@ -64,7 +62,6 @@ p {
     margin-left: 30px;
     margin-top: 10px;
     font-size: 20px;
-    max-width: 900px;
 }
 form {
     margin-left: 20px;
@@ -137,7 +134,10 @@ form button {
     transform: scale(1.2);
 }
 textarea {
-    margin-left: 20px;
+    width: 100%;
+    height: 200px;
+    background-color: #ffffff;
+    resize: none;
 }
 fieldset button[type=submit]{
     margin-left: 200px;
@@ -146,18 +146,6 @@ fieldset button[type=submit]{
 }
 div {
     margin-left: 10px;
-}
-.bannercontainer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.banner {
-    background-image: url(../img/space_memes_018.jpg);
-    background-repeat:no-repeat;
-    background-size: contain;
-    height: 300px;
-    width: 300px;
 }
 .navcontainer {
     display: flex;
@@ -176,8 +164,6 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
     margin: 0px;
 }
 .signup-form {
@@ -246,19 +232,100 @@ ul li a {
     padding: 15px;
 }
 footer {
-    background-color: white;
+    background-color: darkblue;
     text-align: center;
 }
 footer p {
     margin: 0px;
     max-width: unset;
+    color: white;
 }
-.message form {
+.usergreet {
+    width: 100%;
+    background-color: darkblue;
+    margin: 0px;
+}
+.usergreet p {
+    color: white;
+}
+.messageform {
+    margin: 0px;
+}
+.messageform  form {
     display: flex;
     flex-direction: column;
-}
-.message form textarea {
-    width: 100%;
-    height: 300px;
+    align-items: center;
     margin: 0px;
+}
+.messageform button {
+    margin: 30px;
+}
+.message-form h2 {
+    padding: 15px;
+    margin: 30px;
+}
+.comment-box {
+    width: 95%;
+    padding: 20px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 0px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    position: relative;
+}
+.comment-box p {
+    margin: 0px;
+}
+.comment-box form {
+    margin: 0px;
+}
+.comment-box button {
+    margin: 0px;
+    margin-top: 20px;
+}
+.edit-form {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+.edit-form button {
+    width: 40px;
+    height: 20px;
+    color: black;
+    background-color: white;
+    opacity: 0.7;
+    border: none;
+    margin-top: 0px;
+}
+.edit-form button:hover {
+    opacity: 1;
+}
+.edit-box {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    width: 90%;
+    margin-block-end: 0px;
+}
+.edit-box button {
+    margin: 30px;
+}
+.delete-form {
+    position: absolute;
+    top: 4px;
+    right: 60px;
+}
+.delete-form button {
+    width: 40px;
+    height: 20px;
+    color: black;
+    background-color: white;
+    opacity: 0.7;
+    border: none;
+    margin-top: 0px;
+}
+.delete-form button:hover {
+    opacity: 1;
 }

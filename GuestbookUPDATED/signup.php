@@ -15,7 +15,7 @@
     <?php
 
     if (isset($_GET["error"])) {
-        if ($_GET["error"] == "emtpyinput") {
+        if ($_GET["error"] == "emptyinput") {
             echo "<p>Fill in all fields</p>";
         }
         else if ($_GET["error"] == "invaliduid") {
@@ -31,8 +31,8 @@
             echo "<p>Something went wrong, try again!</p>";
         }
     }
-    // Error handling
-
+    // Signup form met foutmeldingen
+    // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
 </section>
 

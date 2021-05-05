@@ -19,6 +19,8 @@ else {
     header("location: ../login.php");
     exit();
 }
+// Als er op de login knop is gedrukt logged deze code via een functie de user in op de database.
+// Als dit niet lukt geeft hij een error weer en stuurt hij je terug naar de login pagina.
 
 function emptyInputLogin($username, $pwd) {
     $result;
@@ -30,6 +32,7 @@ function emptyInputLogin($username, $pwd) {
     }
     return $result;
 }
+// Een functie om te kijken of het login form is ingevuld of niet.
 
 function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username);
@@ -54,5 +57,8 @@ function loginUser($conn, $username, $pwd) {
         exit();
     }
 }
+// Een functie om de user in te loggen.
+// Checked het password.
+// Geeft foutmeldingen weer.
 
 ?>
