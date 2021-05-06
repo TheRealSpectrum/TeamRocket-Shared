@@ -11,7 +11,6 @@
     <nav>
         <div class="navcontainer">
             <a href="index.php"><img src="assets/img/logo.jpg" alt="SpaceBook logo"></a>
-            <h2>SpaceBook</h2>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <?php

@@ -9,8 +9,6 @@ body {
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background: #ebe2e2;
     border-radius: 10px;
     border-top: 5px solid blue;
@@ -30,7 +28,6 @@ h2 {
     background-repeat: none;
     border-radius: 10px;
     color: #ffffff;
-    width: 420px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
@@ -165,6 +162,7 @@ div {
     flex-direction: column;
     align-items: center;
     margin: 0px;
+    min-height: 1000px;
 }
 .signup-form {
     width: 50%;
@@ -208,8 +206,15 @@ div {
     margin: 0px;
     width: 100%;
 }
+.login input {
+    width: 85%;
+    padding: 5px;
+    margin: 5px;
+}
 .signup input {
-    width: 75%;
+    width: 85%;
+    padding: 5px;
+    margin: 5px;
 }
 .signup button {
     margin: 20px;
@@ -236,6 +241,8 @@ footer {
     text-align: center;
 }
 footer p {
+    font-size: 12px;
+    padding: 2px;
     margin: 0px;
     max-width: unset;
     color: white;
@@ -249,16 +256,23 @@ footer p {
     color: white;
 }
 .messageform {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 0px;
 }
 .messageform  form {
     display: flex;
+    width: 80%;
     flex-direction: column;
     align-items: center;
     margin: 0px;
 }
 .messageform button {
     margin: 30px;
+}
+.message-form {
+    width: 80%;
 }
 .message-form h2 {
     padding: 15px;
@@ -278,6 +292,18 @@ footer p {
 .comment-box p {
     margin: 0px;
 }
+.comment-box h2 {
+    width: 98%;
+    padding: 10px;
+    margin: 0px;
+    margin-right: 10px;
+}
+.comment-box h4 {
+    text-align: left;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
 .comment-box form {
     margin: 0px;
 }
@@ -287,11 +313,11 @@ footer p {
 }
 .edit-form {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 34px;
+    right: 30px;
 }
 .edit-form button {
-    width: 40px;
+    width: 60px;
     height: 20px;
     color: black;
     background-color: white;
@@ -314,11 +340,11 @@ footer p {
 }
 .delete-form {
     position: absolute;
-    top: 4px;
-    right: 60px;
+    top: 34px;
+    right: 100px;
 }
 .delete-form button {
-    width: 40px;
+    width: 60px;
     height: 20px;
     color: black;
     background-color: white;

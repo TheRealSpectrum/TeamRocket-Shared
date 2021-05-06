@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (isset($_POST["submit"])) {
 
@@ -58,7 +59,7 @@ function loginUser($conn, $username, $pwd) {
     }
 }
 // Een functie om de user in te loggen.
-// Checked het password.
+// Password check.
 // Geeft foutmeldingen weer.
 
 ?>

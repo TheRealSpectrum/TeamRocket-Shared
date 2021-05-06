@@ -1,6 +1,6 @@
 <?php
 // Hier staan alle hoofd functies op één plek.
-// Geeft de site zijn functionaliteit.
+// Deze functies geven site zijn functionaliteit.
 function emptyInputSignup($name, $email, $username, $pwd, $pwdrepeat) {
     $result;
     if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdrepeat)) {
@@ -117,11 +117,15 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='comment-box'><p>";
-        echo $row['uid'] . "<br>";
-        echo $row['date'] . "<br>";
-        echo nl2br($row['message']) . "<br>";
-        echo "</p>
+        $id = $row['uid'];
+        $sql2 = "SELECT * FROM users WHERE usersid='$id'";
+        $result2 = $conn->query($sql2);
+        if ($row2 = $result2->fetch_assoc()) {
+            echo "<div class='comment-box'>";
+            echo "<h2>" . $row2['usersUid'] . "</h2><br>";
+            echo "<h4>" . $row['date'] . "</h4><br>";
+            echo nl2br("<p>" . $row['message'] . "</p>");
+            echo "
             <form class='edit-form' method='POST' action='includes/editcomment.inc.php'>
                 <input type='hidden' name='cid' value='".$row['cid']."'>
                 <input type='hidden' name='uid' value='".$row['uid']."'>
@@ -134,10 +138,12 @@ function getComments($conn) {
                 <button type='submit' name='commentDelete'>Delete</button>
             </form>
             </div>";
+        }
     }
 }
 // Geeft de berichten vanuit de database weer.
 // berichten hebben een edit en een delete button.
+// berichten zijn gebonden aan logged in user.
 function editComments($conn) {
     if (isset($_POST['commentSubmit'])) {
 
@@ -163,26 +169,4 @@ function deleteComments($conn) {
     }
 }
 // Delete gemaakte berichten.
-?>
-
-
-
-
-
-
-
-
-<?php
-
-//$sql = "SELECT * FROM comments;";
-//$result = mysqli_query($conn, $sql);
-//$resultCheck = mysqli_num_rows($result);
-
-//if ($resultCheck > 0) {
-    //while ($row = mysqli_fetch_assoc($result)) {
-     //   echo "<h2>" . $row['userID'] . "</h2><br>";
-    //    echo "<p>" . $row['comment'] . "</p><br>";
-    //}
-//}
-// Geeft de berichten weer vanuit database
 ?>
