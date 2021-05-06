@@ -70,8 +70,8 @@ form {
     margin-left: 20px;
 }
 fieldset {
-    display: inline;
     margin-left: 10px;
+    margin-right: 30px;
 }
 form label {
     font-size: 20px;

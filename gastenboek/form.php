@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="EN">
 <head>
+<link rel="icon" href=../img/spacebook-website-icons.png>
 <link rel="stylesheet" href="styles.css">
 <title>SpaceBook</title>
 <?php include "functies.php" ?>
