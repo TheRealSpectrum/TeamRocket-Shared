@@ -31,8 +31,11 @@
         else if ($_GET["error"] == "stmtfailed") {
             echo "<p>Something went wrong, try again!</p>";
         }
+        else if ($_GET["error"] == "none") {
+            echo "<p>You have succesfully signed up!";
+        }
     }
-    // Signup form met foutmeldingen
+    // Signup form met foutmeldingen.
     // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
 </section>

@@ -7,7 +7,7 @@
     <div class="messageform">
     <?php
     echo    "<form action='includes/message.inc.php' method='post'>
-            <input type='hidden' name='uid' value='Anonymous'>
+            <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea name='message'></textarea>
             <button type='submit' name='submit'>Post</button>
@@ -22,7 +22,7 @@
             echo "<p>Fill in all fields</p>";
         }
     }
-    // Message form met foutmeldingen.
+    // Message form met datum en foutmeldingen.
     // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
 ?>
 
