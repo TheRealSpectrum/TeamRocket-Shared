@@ -1,6 +1,6 @@
 <?php include_once 'header.php'; ?>
 
-<link rel="icon" href=../img/spacebook-website-icons.png>
+<link rel="icon" href=img/spacebook-website-icons.png>
 <section class="login-form">
     <h2>Log in</h2>
     <div class="login">
