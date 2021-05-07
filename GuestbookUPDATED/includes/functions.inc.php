@@ -157,7 +157,7 @@ function editComments($conn) {
         header("Location: ../index.php");
     }
 }
-// Edit gemaakte berichten.
+// Edit gemaakte berichten in de database.
 function deleteComments($conn) {
     if (isset($_POST['commentDelete'])) {
 
@@ -168,5 +168,5 @@ function deleteComments($conn) {
         header("Location: ../index.php");
     }
 }
-// Delete gemaakte berichten.
+// Delete gemaakte berichten uit de database.
 ?>

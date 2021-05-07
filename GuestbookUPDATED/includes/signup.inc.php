@@ -32,11 +32,11 @@ if (isset($_POST["submit"])) {
         header("location: ../signup.php?error=usernametaken");
         exit();
     }
-    // Error handling.
+    // kijkt of alles goed is ingevoerd of anders krijg je een error message.
 
     createUser($conn, $name, $email, $username, $pwd);
 
-    // Functie uitvoeren
+    // Functie uitvoeren om een user aan de database toe te voegen.
 
 }
 else {

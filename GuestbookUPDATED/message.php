@@ -1,7 +1,6 @@
 <?php include_once 'header.php'; ?>
 <?php date_default_timezone_set('Europe/Amsterdam'); ?>
 
-<link rel="icon" href=../img/spacebook-website-icons.png>
 <section class="message-form">
     <h2>Leave a message</h2>
     <div class="messageform">

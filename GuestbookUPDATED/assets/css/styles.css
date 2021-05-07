@@ -26,7 +26,6 @@ h2 {
     margin-left: 20px;
     background-image: url(../img/Space.jpeg);
     background-repeat: none;
-    background-size: 100%;
     border-radius: 10px;
     color: #ffffff;
     padding-left: 10px;
@@ -47,24 +46,6 @@ button {
 button:hover{
     cursor: pointer;
     transition-duration: 0.5s;
-    border-radius: 10px;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-}
-li {
-    margin-right: 20px;
-    background-color: royalblue;
-    border: 3px solid royalblue;
-    border-radius: 70px;
-    width: 160px;
-    height: 30px;
-    text-align: center;
-}
-li:hover {
-    cursor: pointer;
-    transition-duration: 0.5s;
-    color: royalblue;
     border-radius: 10px;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -265,6 +246,11 @@ footer p {
     margin: 0px;
     max-width: unset;
     color: white;
+}
+iframe {
+    width: 853px;
+    height: 505px;
+    margin: 10px;
 }
 .usergreet {
     width: 100%;

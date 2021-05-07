@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <title>SpaceBook</title>
-  <link rel="icon" href=../img/spacebook-website-icons.png>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
