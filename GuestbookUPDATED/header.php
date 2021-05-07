@@ -16,6 +16,7 @@
                 <?php
                 if (isset($_SESSION["useruid"])) {
                     echo "<li><a href='message.php'>Leave a message</a></li>";
+                    echo "<li><a href='memes.php'>Memes</a></li>";
                     echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
                 }
                 else {
