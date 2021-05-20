@@ -24,6 +24,7 @@ h1, h3, h4, h5, h6 {
 }
 h2 {
     margin-left: 20px;
+    margin-right: 20px;
     background-image: url(../img/Space.jpeg);
     background-repeat: none;
     border-radius: 10px;
@@ -32,6 +33,32 @@ h2 {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+li {
+    margin-right: 30px;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+}
+.message {
+    margin-right: 30px;
+    background-color: royalblue;
+    border: 3px solid royalblue;
+    border-radius: 70px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+li:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 button {
     margin-left: 20px;
@@ -232,12 +259,12 @@ ul {
     align-items: center;
 }
 ul li a {
-    color: black;
+    color: #ffffff;
     font-size: larger;
     padding: 15px;
 }
 footer {
-    background-color: darkblue;
+    background-color: blue;
     text-align: center;
 }
 footer p {
@@ -325,6 +352,8 @@ iframe {
     position: relative;
 }
 .meme-box img {
+    margin-left: 110px;
+    margin-bottom: 20px;
     height: 250px;
     width: 250px;
 }
