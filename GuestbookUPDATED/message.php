@@ -1,6 +1,12 @@
 <?php include_once 'header.php'; ?>
 <?php date_default_timezone_set('Europe/Amsterdam'); ?>
 
+<?php
+    if (isset($_SESSION["useruid"])) {
+        echo "<div class='usergreet'><p>Your are logged in as: " . $_SESSION["useruid"] . "<br>Welcome!</p></div>";
+    }
+    // Welkomst tekst voor de ingelogde user.
+?>
 <section class="message-form">
     <h2>Leave a message</h2>
     <div class="messageform">

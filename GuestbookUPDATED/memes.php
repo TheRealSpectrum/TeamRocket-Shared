@@ -3,6 +3,12 @@
 <?php include_once 'includes/functions.inc.php'; ?>
 <?php date_default_timezone_set('Europe/Amsterdam'); ?>
 
+<?php
+    if (isset($_SESSION["useruid"])) {
+        echo "<div class='usergreet'><p>Your are logged in as: " . $_SESSION["useruid"] . "<br>Welcome!</p></div>";
+    }
+    // Welkomst tekst voor de ingelogde user.
+?>
 <section class="memes-form">
     <h2>Share memes</h2>
     <div class="memeform">
