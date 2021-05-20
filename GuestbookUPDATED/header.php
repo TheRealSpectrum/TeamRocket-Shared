@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>SpaceBook</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="../img/spacebook-website-icons.png">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                 <li><a href="index.php">Home</a></li>
                 <?php
                 if (isset($_SESSION["useruid"])) {
-                    echo "<li><a href='message.php'>Leave a message</a></li>";
+                    echo "<li class='message'><a href='message.php'>Leave a message</a></li>";
                     echo "<li><a href='memes.php'>Memes</a></li>";
                     echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
                 }

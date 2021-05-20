@@ -1,11 +1,11 @@
 <?php
 
-$serverName = "127.0.0.1";
+$serverName = "localhost";
 $dBUsername = "root";
-$dBPassword = "";
+$dBPassword = "spectrum";
 $dBName = "guestbook";
 
-$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName, "3360");
+$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName, "3306");
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
