@@ -1,4 +1,6 @@
 <?php include_once 'header.php'; ?>
+<?php include_once 'includes/dbh.inc.php'; ?>
+<?php include_once 'includes/functions.inc.php'; ?>
 <?php date_default_timezone_set('Europe/Amsterdam'); ?>
 
 <section class="memes-form">
@@ -11,6 +13,15 @@
             <input type='url' name='link' placeholder='Insert url here...'>
             <button type='submit' name='submit'>Post</button>
             </form>";
+    ?>
+    </div>
+</section>
+
+<section class="memes-View">
+    <h2>Submitted Memes</h2>
+    <div class="memeview">
+    <?php
+    getMemes($conn);
     ?>
     </div>
 </section>

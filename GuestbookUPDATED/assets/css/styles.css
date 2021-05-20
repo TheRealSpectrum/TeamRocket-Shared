@@ -316,6 +316,21 @@ iframe {
     margin: 0px;
     margin-top: 20px;
 }
+.meme-box {
+    width: 95%;
+    padding: 20px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 0px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    position: relative;
+}
+.meme-box img {
+    height: 250px;
+    width: 250px;
+}
 .edit-form {
     position: absolute;
     top: 34px;

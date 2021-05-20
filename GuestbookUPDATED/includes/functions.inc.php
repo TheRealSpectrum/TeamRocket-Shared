@@ -113,7 +113,7 @@ function setComments($conn, $username, $date, $message) {
     exit();
 }
 function setUrl($conn, $username, $link, $date) {
-    $sql = "INSERT INTO memes (userid, link, created) VALUES (?, ?, ?);";
+    $sql = "INSERT INTO memes (uid, link, date) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../memes.php?error=stmtfailed");
@@ -123,7 +123,7 @@ function setUrl($conn, $username, $link, $date) {
     mysqli_stmt_bind_param($stmt, "sss", $username, $link, $date);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../index.php?error=none");
+    header("location: ../memes.php?error=none");
     exit();
 }
 // Voegt de url die de user heeft aangemaakt op de memes pagina toe aan de database of geeft een error weer als dit niet lukt.
@@ -166,21 +166,14 @@ function getMemes($conn) {
         $sql2 = "SELECT * FROM users WHERE usersid='$id'";
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
-            echo "<div class='comment-box'>";
+            echo "<div class='meme-box'>";
             echo "<h2>" . $row2['usersUid'] . "</h2><br>";
             echo "<h4>" . $row['date'] . "</h4><br>";
-            echo nl2br("<p>" . $row['message'] . "</p>");
+            echo nl2br("<img src='" . $row['link'] . "'>");
             echo "
-            <form class='edit-form' method='POST' action='includes/editcomment.inc.php'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                <input type='hidden' name='uid' value='".$row['uid']."'>
-                <input type='hidden' name='date' value='".$row['date']."'>
-                <input type='hidden' name='message' value='".$row['message']."'>
-                <button type='submit' name='commentEdit'>Edit</button>
-            </form>
-            <form class='delete-form' method='POST' action='includes/deletecomment.inc.php'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                <button type='submit' name='commentDelete'>Delete</button>
+            <form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
+                <input type='hidden' name='id' value='".$row['id']."'>
+                <button type='submit' name='linkDelete'>Delete</button>
             </form>
             </div>";
         }
@@ -212,4 +205,15 @@ function deleteComments($conn) {
     }
 }
 // Delete gemaakte berichten uit de database.
+function deleteMemes($conn) {
+    if (isset($_POST['linkDelete'])) {
+
+        $id = $_POST["id"];
+
+        $sql = "DELETE FROM memes WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../memes.php");
+    }
+}
+// Delete gemaakte Memes uit de database.
 ?>
