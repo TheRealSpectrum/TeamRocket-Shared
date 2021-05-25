@@ -354,6 +354,11 @@ iframe {
     text-align: left;
     position: relative;
 }
+.meme-box button {
+    color: white;
+    margin: 0px;
+    margin-bottom: 10px;
+}
 .meme-box h2 {
     width: 80%;
 }
@@ -423,4 +428,14 @@ iframe {
 }
 .delete-form button:hover {
     opacity: 1;
+}
+.red:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: crimson;
+    border: 3px solid crimson;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
