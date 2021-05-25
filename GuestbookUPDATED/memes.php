@@ -28,6 +28,7 @@
     <div class="memeview">
     <?php
     getMemes($conn);
+    // functie om memes vanuit de database weer te geven.
     ?>
     </div>
 </section>

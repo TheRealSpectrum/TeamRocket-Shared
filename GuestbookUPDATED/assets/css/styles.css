@@ -344,6 +344,9 @@ iframe {
     margin-top: 20px;
 }
 .meme-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: calc(95%/3);
     margin: 10px;
     border-radius: 10px;
@@ -351,11 +354,21 @@ iframe {
     text-align: left;
     position: relative;
 }
+.meme-box h2 {
+    width: 80%;
+}
+.meme-box h4 {
+    margin: 0px;
+}
 .meme-box img {
-    margin-left: 110px;
     margin-bottom: 20px;
     height: 250px;
     width: 250px;
+}
+.meme-box .delete-form {
+    margin: 0px;
+    top: 35px;
+    right: 45px;
 }
 .memes-view {
     width: 100%;
