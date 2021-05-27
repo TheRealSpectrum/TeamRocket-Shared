@@ -354,6 +354,7 @@ iframe {
 .meme-box img {
     margin-left: 110px;
     margin-bottom: 20px;
+    border-radius: 4px;
     height: 250px;
     width: 250px;
 }
