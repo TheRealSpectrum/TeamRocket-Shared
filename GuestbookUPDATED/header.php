@@ -6,6 +6,7 @@
   <title>SpaceBook</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" href="../img/spacebook-website-icons.png">
+  <script src="https://kit.fontawesome.com/c5633794e3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

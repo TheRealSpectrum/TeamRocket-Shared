@@ -177,8 +177,12 @@ function getMemes($conn) {
                   </form>";
                   echo "<form class='vote-form' method='POST' action='includes/votes.inc.php'>
                     <input type='hidden' name='id' value='".$row['id']."'>
-                    <button type='submit' name='upvote'>Upvote</button>
-                    <button class='red' type='submit' name='downvote'>Downvote</button>
+                    <button type='submit' name='upvote'>
+                        <i class='far fa-thumbs-up'></i>
+                    </button>
+                    <button type='submit' name='downvote' class='red'>
+                        <i class='far fa-thumbs-down'></i>
+                    </button>
                   </form>";
             echo "</div>";
         }

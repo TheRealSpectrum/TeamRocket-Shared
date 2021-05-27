@@ -359,6 +359,10 @@ iframe {
     margin: 0px;
     margin-bottom: 10px;
 }
+.meme-box p {
+    margin: 0px;
+    padding: 0px;
+}
 .meme-box h2 {
     width: 80%;
 }
@@ -430,6 +434,14 @@ iframe {
 .delete-form button:hover {
     opacity: 1;
 }
+.vote-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+.vote-form button {
+    margin: 10px;
+}
 .red:hover{
     cursor: pointer;
     transition-duration: 0.5s;
@@ -440,24 +452,6 @@ iframe {
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
-#demo {
-    max-width: 600px;
-    margin: 0 auto;
+#clickableAwesomeFont {
+    cursor: pointer
 }
-.prow {
-    display: flex;
-    background: #fafafa;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-.ptxt {
-    width: 100%;
-}
-.plike, .pdislike {
-    width: 80px; 
-    cursor: pointer;
-    color: #bbb;
-}
-.prow[data-react="0"] .pdislike { color: #f12727; }
-.prow[data-react="1"] .plike { color: #0cb30c; }
