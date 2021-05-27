@@ -344,6 +344,9 @@ iframe {
     margin-top: 20px;
 }
 .meme-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: calc(95%/3);
     margin: 10px;
     border-radius: 10px;
@@ -351,12 +354,27 @@ iframe {
     text-align: left;
     position: relative;
 }
+.meme-box button {
+    color: white;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.meme-box h2 {
+    width: 80%;
+}
+.meme-box h4 {
+    margin: 0px;
+}
 .meme-box img {
-    margin-left: 110px;
     margin-bottom: 20px;
     border-radius: 4px;
     height: 250px;
     width: 250px;
+}
+.meme-box .delete-form {
+    margin: 0px;
+    top: 35px;
+    right: 45px;
 }
 .memes-view {
     width: 100%;
@@ -411,4 +429,14 @@ iframe {
 }
 .delete-form button:hover {
     opacity: 1;
+}
+.red:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: crimson;
+    border: 3px solid crimson;
+    border-radius: 10px;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }

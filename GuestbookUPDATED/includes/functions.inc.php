@@ -170,7 +170,7 @@ function getMemes($conn) {
             echo "<h2>" . $row2['usersUid'] . "</h2><br>";
             echo "<h4>" . $row['date'] . "</h4><br>";
             echo nl2br("<img src='" . $row['link'] . "'>");
-            echo "<button>Like</button><br><button>Dislike</button>";
+            echo "<button>Like</button><br><button class='red'>Dislike</button>";
             echo "
             <form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
                 <input type='hidden' name='id' value='".$row['id']."'>
