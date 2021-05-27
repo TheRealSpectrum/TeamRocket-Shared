@@ -170,18 +170,23 @@ function getMemes($conn) {
             echo "<h2>" . $row2['usersUid'] . "</h2><br>";
             echo "<h4>" . $row['date'] . "</h4><br>";
             echo nl2br("<img src='" . $row['link'] . "'>");
-            echo "<button>Like</button><br><button class='red'>Dislike</button>";
-            echo "
-            <form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
-                <input type='hidden' name='id' value='".$row['id']."'>
-                <button type='submit' name='linkDelete'>Delete</button>
-            </form>
-            </div>";
+            echo "<p>" . $row['likecount'] . "</p><br>";
+            echo "<form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <button type='submit' name='linkDelete'>Delete</button>
+                  </form>";
+                  echo "<form class='vote-form' method='POST' action='includes/votes.inc.php'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <button type='submit' name='upvote'>Upvote</button>
+                    <button class='red' type='submit' name='downvote'>Downvote</button>
+                  </form>";
+            echo "</div>";
         }
     }
 }
 // Geeft de Memes vanuit de database weer.
 // Memes hebben een delete button. 
+// Memes hebben een up en downvote optie.
 // Memes zijn gebonden aan logged in user.
 function editComments($conn) {
     if (isset($_POST['commentSubmit'])) {
@@ -219,4 +224,23 @@ function deleteMemes($conn) {
     }
 }
 // Delete gemaakte Memes uit de database.
+function editVotes($conn) {
+    if (isset($_POST['upvote'])) {
+
+        $upvote = $_POST["upvote"];
+        $id = $_POST["id"];
+
+        $sql = "UPDATE memes SET likecount=likecount+1 WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../memes.php");
+    } else if (isset($_POST['downvote'])) {
+
+        $downvote = $_POST['downvote'];
+        $id = $_POST["id"];
+        $sql = "UPDATE memes SET likecount=likecount-1 WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../memes.php");
+    }
+}
+// Veranderd de votecount in de database als je op de up of downvote drukt.
 ?>

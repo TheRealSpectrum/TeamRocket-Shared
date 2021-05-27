@@ -19,6 +19,8 @@
             <input type='url' name='link' placeholder='Insert url here...'>
             <button type='submit' name='submit'>Post</button>
             </form>";
+    // Meme form met datum en foutmeldingen.
+    // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
     </div>
 </section>
@@ -28,7 +30,6 @@
     <div class="memeview">
     <?php
     getMemes($conn);
-    // functie om memes vanuit de database weer te geven.
     ?>
     </div>
 </section>
@@ -39,8 +40,6 @@
             echo "<p>Fill in all fields</p>";
         }
     }
-    // Meme form met datum en foutmeldingen.
-    // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
 ?>
 
 <?php include_once 'footer.php'; ?>
