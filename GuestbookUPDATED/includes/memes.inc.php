@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    setUrl($conn, $username, $link, $date);
+    setUrl($conn, $username, $link, $date,);
 
 }
 else {
