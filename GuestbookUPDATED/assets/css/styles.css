@@ -2,20 +2,19 @@ html {
     margin: 0 auto;
     padding: 0;
     background-image: url(../img/Space_Background.jpg);
-    background-size: 1905px;
 }
 body {
     font: 100% Arial, Helvetica, sans-serif;
-    width: 75%;
+    width: 80%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     background: #ebe2e2;
     border-radius: 10px;
-    border-top: 5px solid blue;
-    border-bottom: 5px solid blue;
-    border-left: 2px solid blue;
-    border-right: 2px solid blue;
+    border-top: 5px solid royalblue;
+    border-bottom: 5px solid royalblue;
+    border-left: 2px solid royalblue;
+    border-right: 2px solid royalblue;
     opacity: 0.8;
 }
 h1, h3, h4, h5, h6 {
@@ -179,7 +178,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 120px;
+    height: 100px;
     background-color: white;
     margin-left: 0px;
     padding: 15px;
@@ -193,7 +192,7 @@ div {
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    min-height: 1000px;
+    min-height: 100%;
 }
 .signup-form {
     width: 50%;
@@ -268,7 +267,7 @@ ul li a {
     padding: 15px;
 }
 footer {
-    background-color: blue;
+    background-color: royalblue;
     text-align: center;
 }
 footer p {
@@ -285,7 +284,7 @@ iframe {
 }
 .usergreet {
     width: 100%;
-    background-color: darkblue;
+    background-color: royalblue;
     margin: 0px;
 }
 .usergreet p {
@@ -313,9 +312,22 @@ iframe {
 .message-form h2 {
     padding: 15px;
     margin-top: 30px;
-    margin-left: 105px;
     margin-bottom: 30px;
-    width: 900px;
+}
+.comment-delete-form {
+    position: absolute;
+    margin: 0px;
+    top: 34px;
+    right: 40px;
+}
+.comment-delete-form button {
+    width: 60px;
+    height: 20px;
+    color: black;
+    background-color: white;
+    opacity: 0.7;
+    border: none;
+    margin-top: 0px;
 }
 .comment-box {
     width: 95%;
@@ -349,13 +361,11 @@ iframe {
 }
 .comment-box button {
     margin: 0px;
-    margin-top: 20px;
 }
 .meme-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(95%/3);
     margin: 11px;
     border-radius: 10px;
     background-color: white;
@@ -380,27 +390,22 @@ iframe {
 .meme-box img {
     margin-bottom: 20px;
     border-radius: 4px;
-    height: 400px;
-    width: 400px;
+    width: 85%;
 }
 .meme-box button {
     color: #ffffff;
-    margin-left: 150px;
 }
 .memes-view {
     width: 100%;
 }
 .memeview {
-    width: 100%;
-    display: flex;
-    margin: 0px;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 .edit-form {
     position: absolute;
     top: 34px;
-    right: 30px;
+    right: 120px;
 }
 .edit-form button {
     width: 60px;
@@ -426,8 +431,9 @@ iframe {
 }
 .delete-form {
     position: absolute;
-    top: 34px;
-    right: 100px;
+    margin: 0px;
+    top: 7%;
+    right: 12%;
 }
 .delete-form button {
     width: 60px;

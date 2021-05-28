@@ -142,7 +142,7 @@ function getComments($conn) {
                 <input type='hidden' name='message' value='".$row['message']."'>
                 <button type='submit' name='commentEdit'>Edit</button>
             </form>
-            <form class='delete-form' method='POST' action='includes/deletecomment.inc.php'>
+            <form class='comment-delete-form' method='POST' action='includes/deletecomment.inc.php'>
                 <input type='hidden' name='cid' value='".$row['cid']."'>
                 <button type='submit' name='commentDelete'>Delete</button>
             </form>
