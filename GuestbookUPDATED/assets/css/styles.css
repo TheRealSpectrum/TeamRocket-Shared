@@ -18,21 +18,15 @@ body {
     opacity: 0.8;
 }
 h1, h3, h4, h5, h6 {
-    margin-left: 20px;
     text-align: center;
     color: royalblue;
 }
 h2 {
-    margin-left: 20px;
-    margin-right: 20px;
     background-image: url(../img/Space.jpeg);
     background-size: 1000px 200px;
     border-radius: 10px;
+    padding: 10px;
     color: #ffffff;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 .meme-box h2 {
     background-size: 800px;
@@ -64,8 +58,6 @@ li:hover{
     transform: scale(1.2);
 }
 button {
-    margin-left: 20px;
-    margin-bottom: 10px;
     background-color: royalblue;
     border: 3px solid royalblue;
     border-radius: 70px;
@@ -89,9 +81,6 @@ p {
     margin-left: 30px;
     margin-top: 10px;
     font-size: 20px;
-}
-form {
-    margin-left: 20px;
 }
 fieldset {
     display: inline;
@@ -170,9 +159,6 @@ fieldset button[type=submit]{
     margin-left: 200px;
     margin-top: 10px;
     color: #FFFFFF;
-}
-div {
-    margin-left: 10px;
 }
 .navcontainer {
     display: flex;
@@ -269,6 +255,7 @@ ul li a {
 footer {
     background-color: royalblue;
     text-align: center;
+    width: 100%;
 }
 footer p {
     font-size: 12px;
@@ -314,6 +301,10 @@ iframe {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.likes {
+    display: absolute;
+    float: right;
+}
 .comment-delete-form {
     position: absolute;
     margin: 0px;
@@ -329,51 +320,96 @@ iframe {
     border: none;
     margin-top: 0px;
 }
+.comment-reply-form {
+    position: absolute;
+    margin: 0px;
+    top: 34px;
+    right: 40px;
+}
+.comment-reply-form button {
+    width: 60px;
+    height: 20px;
+    color: black;
+    background-color: white;
+    opacity: 0.7;
+    border: none;
+    margin-top: 0px;
+}
+.commentmessage {
+    color: red;
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 .comment-box {
     width: 95%;
     padding: 20px;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    margin-left: 0px;
-    border-radius: 4px;
+    margin: 10px;
     background-color: white;
     text-align: left;
     position: relative;
 }
 .comment-box p {
     margin: 0px;
+    text-align: left;
 }
 .comment-box h2 {
-    width: 98%;
+    text-align: center;
+    width: 30%;
     padding: 10px;
     margin: 0px;
-    margin-right: 10px;
     background-size: 1400px 300px;
 }
 .comment-box h4 {
     text-align: left;
     width: 100%;
     padding: 0px;
-    margin: 0px;
-}
-.comment-box form {
-    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .comment-box button {
     margin: 0px;
 }
+.comment-vote-form {
+    display: absolute;
+    float: left;
+    margin: 20px;
+}
+.comment-vote-form button {
+    width: 40px;
+    height: 40px;
+    background-color: unset;
+    border: unset;
+    border-radius: unset;
+}
+.comment-vote-form i {
+    color: royalblue;
+}
 .meme-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 11px;
-    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
     background-color: white;
     text-align: left;
     position: relative;
 }
-.meme-box button {
-    color: white;
+.meme-box .delete-form {
+    position: absolute;
+    margin: 0px;
+    top: 30px;
+    right: 30px;
+}
+.meme-box .vote-form {
+    display: absolute;
+    float: left;
+}
+.meme-box .likes {
+    display: absolute;
+    float: right;
+}
+.meme-box h2 {
+    text-align: center;
+    width: 55%;
     margin: 0px;
     margin-bottom: 10px;
 }
@@ -381,19 +417,16 @@ iframe {
     margin: 0px;
     padding: 0px;
 }
-.meme-box h2 {
-    width: 80%;
-}
 .meme-box h4 {
+    text-align: left;
     margin: 0px;
 }
 .meme-box img {
     margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 4px;
-    width: 85%;
-}
-.meme-box button {
-    color: #ffffff;
+    width: 100%;
+    opacity: 1;
 }
 .memes-view {
     width: 100%;
@@ -429,12 +462,6 @@ iframe {
 .edit-box button {
     margin: 30px;
 }
-.delete-form {
-    position: absolute;
-    margin: 0px;
-    top: 7%;
-    right: 12%;
-}
 .delete-form button {
     width: 60px;
     height: 20px;
@@ -448,20 +475,25 @@ iframe {
     opacity: 1;
 }
 .vote-form {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0px;
-    margin-bottom: 20px;
+    margin: 0px;
+}
+.vote-form button {
+    width: 22px;
+    height: 22px;
+    background-color: unset;
+    border: unset;
+    border-radius: unset;
+}
+.vote-form i {
+    color: royalblue;
 }
 .vote-form button {
     margin-left: 0px;
 }
-.red:hover{
+.red i:hover{
     cursor: pointer;
     transition-duration: 0.5s;
-    background-color: crimson;
-    border: 3px solid crimson;
-    border-radius: 10px;
+    color: red;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);

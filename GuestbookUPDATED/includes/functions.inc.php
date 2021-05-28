@@ -123,30 +123,59 @@ function setUrl($conn, $username, $link, $date) {
 }
 // Voegt de url die de user heeft aangemaakt op de memes pagina toe aan de database of geeft een error weer als dit niet lukt.
 function getComments($conn) {
-    $sql = "SELECT * FROM comments";
+    $sql = "SELECT * FROM comments ORDER BY likecount DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $id = $row['uid'];
-        $sql2 = "SELECT * FROM users WHERE usersid='$id'";
+        $sql2 = "SELECT * FROM users WHERE usersId='$id'";
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-box'>";
-            echo "<h2>" . $row2['usersUid'] . "</h2><br>";
-            echo "<h4>" . $row['date'] . "</h4><br>";
-            echo nl2br("<p>" . $row['message'] . "</p>");
-            echo "
-            <form class='edit-form' method='POST' action='includes/editcomment.inc.php'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                <input type='hidden' name='uid' value='".$row['uid']."'>
-                <input type='hidden' name='date' value='".$row['date']."'>
-                <input type='hidden' name='message' value='".$row['message']."'>
-                <button type='submit' name='commentEdit'>Edit</button>
-            </form>
-            <form class='comment-delete-form' method='POST' action='includes/deletecomment.inc.php'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                <button type='submit' name='commentDelete'>Delete</button>
-            </form>
-            </div>";
+            echo "<h2>" . $row2['usersUid'] . "</h2>";
+            echo "<h4>" . $row['date'] . "</h4>";
+            echo "<p>" . $row['message'] . "</p>";
+            echo "<p class='likes'>Likes: " . $row['likecount'] . "</p>";
+            if (isset($_SESSION['useruid'])) {
+                if ($_SESSION['useruid'] == $row2['usersUid']) {
+                    echo "<form class='edit-form' method='POST' action='includes/editcomment.inc.php'>
+                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                        <input type='hidden' name='uid' value='".$row['uid']."'>
+                        <input type='hidden' name='date' value='".$row['date']."'>
+                        <input type='hidden' name='message' value='".$row['message']."'>
+                        <button type='submit' name='commentEdit'>Edit</button>
+                    </form>
+                    <form class='comment-delete-form' method='POST' action='includes/deletecomment.inc.php'>
+                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                        <button type='submit' name='commentDelete'>Delete</button>
+                    </form>";
+                    echo "<form class='comment-vote-form' method='POST' action='includes/commentvotes.inc.php'>
+                    <input type='hidden' name='id' value='".$row['cid']."'>
+                    <button type='submit' name='upvote'>
+                        <i class='far fa-thumbs-up'></i>
+                    </button>
+                    <button type='submit' name='downvote' class='red'>
+                        <i class='far fa-thumbs-down'></i>
+                    </button>
+                  </form>";
+                } else {
+                    echo "<form class='comment-reply-form' method='POST' action='includes/reply.inc.php'>
+                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                        <button type='submit' name='commentDelete'>Reply</button>
+                        </form>";
+                        echo "<form class='comment-vote-form' method='POST' action='includes/commentvotes.inc.php'>
+                        <input type='hidden' name='id' value='".$row['cid']."'>
+                        <button type='submit' name='upvote'>
+                            <i class='far fa-thumbs-up'></i>
+                        </button>
+                        <button type='submit' name='downvote' class='red'>
+                            <i class='far fa-thumbs-down'></i>
+                        </button>
+                      </form>";
+                }
+            } else {
+                echo "<p class='commentmessage'>You need to be logged in to reply or vote!</p>";
+            }
+            echo "</div>";
         }
     }
 }
@@ -162,11 +191,13 @@ function getMemes($conn) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='meme-box'>";
-            echo "<h2>" . $row2['usersUid'] . "</h2><br>";
-            echo "<h4>" . $row['date'] . "</h4><br>";
-            echo nl2br("<img src='" . $row['link'] . "'>");
-            echo "<p>" . $row['likecount'] . "</p><br>";
-            echo "<form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
+            echo "<h2>" . $row2['usersUid'] . "</h2>";
+            echo "<h4>" . $row['date'] . "</h4>";
+            echo "<img src='" . $row['link'] . "'>";
+            echo "<p class='likes'>Likes: " . $row['likecount'] . "</p>";
+            if (isset($_SESSION['useruid'])) {
+                if ($_SESSION['useruid'] == $row2['usersUid']) {
+                    echo "<form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
                     <input type='hidden' name='id' value='".$row['id']."'>
                     <button type='submit' name='linkDelete'>Delete</button>
                   </form>";
@@ -179,6 +210,18 @@ function getMemes($conn) {
                         <i class='far fa-thumbs-down'></i>
                     </button>
                   </form>";
+                } else {
+                  echo "<form class='vote-form' method='POST' action='includes/votes.inc.php'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <button type='submit' name='upvote'>
+                        <i class='far fa-thumbs-up'></i>
+                    </button>
+                    <button type='submit' name='downvote' class='red'>
+                        <i class='far fa-thumbs-down'></i>
+                    </button>
+                  </form>";
+                }
+            }
             echo "</div>";
         }
     }
@@ -205,6 +248,7 @@ function deleteComments($conn) {
     if (isset($_POST['commentDelete'])) {
 
         $cid = $_POST["cid"];
+        $uid = $_POST["usersUid"];
 
         $sql = "DELETE FROM comments WHERE cid='$cid'";
         $result = $conn->query($sql);
@@ -241,5 +285,24 @@ function editVotes($conn) {
         header("Location: ../memes.php");
     }
 }
-// Veranderd de votecount in de database als je op de up of downvote drukt.
+// Veranderd de meme votecount in de database als je op de up of downvote drukt.
+function editCommentvotes($conn) {
+    if (isset($_POST['upvote'])) {
+
+        $upvote = $_POST["upvote"];
+        $id = $_POST["id"];
+
+        $sql = "UPDATE comments SET likecount=likecount+1 WHERE cid='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    } else if (isset($_POST['downvote'])) {
+
+        $downvote = $_POST['downvote'];
+        $id = $_POST["id"];
+        $sql = "UPDATE comments SET likecount=likecount-1 WHERE cid='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    }
+}
+// Veranderd de comment votecount in de database als je op de up of downvote drukt.
 ?>
