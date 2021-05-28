@@ -2,7 +2,6 @@
 // Hier staan alle hoofd functies op één plek.
 // Deze functies geven site zijn functionaliteit.
 function emptyInputSignup($name, $email, $username, $pwd, $pwdrepeat) {
-    $result;
     if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdrepeat)) {
         $result = true;
     }
@@ -13,7 +12,6 @@ function emptyInputSignup($name, $email, $username, $pwd, $pwdrepeat) {
 }
 // Kijkt of de signup goed ingevuld is.
 function emptyInputMessage($username, $message) {
-    $result;
     if (empty($username) || empty($message)) {
         $result = true;
     }
@@ -24,7 +22,6 @@ function emptyInputMessage($username, $message) {
 }
 // Kijkt of het bericht goed ingevuld is.
 function invalidUid($username) {
-    $result;
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
     }
@@ -35,7 +32,6 @@ function invalidUid($username) {
 }
 // Kijkt of de username goed aangemaakt is.
 function invalidEmail($email) {
-    $result;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     }
@@ -46,7 +42,6 @@ function invalidEmail($email) {
 }
 // Kijkt of de email goed is.
 function pwdMatch($pwd, $pwdrepeat) {
-    $result;
     if ($pwd !== $pwdrepeat) {
         $result = true;
     }
@@ -159,7 +154,7 @@ function getComments($conn) {
 // berichten hebben een edit en een delete button.
 // berichten zijn gebonden aan logged in user.
 function getMemes($conn) {
-    $sql = "SELECT * FROM memes";
+    $sql = "SELECT * FROM memes ORDER BY likecount DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $id = $row['uid'];

@@ -24,7 +24,6 @@ else {
 // Als dit niet lukt geeft hij een error weer en stuurt hij je terug naar de login pagina.
 
 function emptyInputLogin($username, $pwd) {
-    $result;
     if (empty($username) || empty($pwd)) {
         $result = true;
     }
