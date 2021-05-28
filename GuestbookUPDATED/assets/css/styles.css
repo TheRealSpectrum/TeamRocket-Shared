@@ -380,8 +380,8 @@ iframe {
 .meme-box img {
     margin-bottom: 20px;
     border-radius: 4px;
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
 }
 .meme-box button {
     color: #ffffff;
@@ -444,10 +444,11 @@ iframe {
 .vote-form {
     display: flex;
     flex-direction: column;
-    margin: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
 }
 .vote-form button {
-    margin: 10px;
+    margin-left: 0px;
 }
 .red:hover{
     cursor: pointer;
