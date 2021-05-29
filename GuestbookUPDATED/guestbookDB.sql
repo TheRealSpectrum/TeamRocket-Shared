@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2021 at 02:24 PM
+-- Generation Time: May 29, 2021 at 02:10 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -33,7 +33,8 @@ CREATE TABLE `comments` (
   `cid` int(11) NOT NULL,
   `uid` varchar(128) NOT NULL,
   `date` datetime NOT NULL,
-  `message` text NOT NULL
+  `message` text NOT NULL,
+  `likecount` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -47,7 +48,7 @@ CREATE TABLE `memes` (
   `uid` varchar(128) NOT NULL,
   `link` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
-  `likecount` int(11) DEFAULT 0
+  `likecount` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -63,6 +64,14 @@ CREATE TABLE `users` (
   `usersUid` varchar(128) NOT NULL,
   `usersPwd` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES
+(12, 'Matthew Wildhagen', 'mwildhagen@hotmail.com', 'Matt', '$2y$10$cOgB4XN.OyBeXP93FDyOsO0TV/noefsDh.Hv1X8MUcOUe0BsvaOla'),
+(13, 'Jesse James', 'jj@gmail.com', 'Jesse', '$2y$10$S61oRdvdi4i4qPJfIo.aeOaUJFdCfZj/EVPPUjRw1XuUITXkKjZL6');
 
 --
 -- Indexes for dumped tables
@@ -94,19 +103,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `memes`
 --
 ALTER TABLE `memes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

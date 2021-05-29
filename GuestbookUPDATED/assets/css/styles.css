@@ -78,8 +78,6 @@ a {
     color: #ffffff;
 }
 p {
-    margin-left: 30px;
-    margin-top: 10px;
     font-size: 20px;
 }
 fieldset {
@@ -278,32 +276,14 @@ iframe {
     color: white;
 }
 .messageform {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 0px;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.messageform  form {
-    display: flex;
-    width: 80%;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px;
-}
-.messageform button {
-    margin: 30px;
-}
-.message-form {
-    width: 80%;
-}
-.message-form h2 {
-    padding: 15px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.likes {
-    display: absolute;
-    float: right;
+.edit-box {
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .comment-delete-form {
     position: absolute;
@@ -350,8 +330,17 @@ iframe {
     text-align: left;
     position: relative;
 }
+.comment-box .likes-box {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+}
+.comment-box .likes-box p {
+    margin: 0px;
+}
 .comment-box p {
     margin: 0px;
+    margin-bottom: 20px;
     text-align: left;
 }
 .comment-box h2 {
@@ -373,8 +362,7 @@ iframe {
 }
 .comment-vote-form {
     display: absolute;
-    float: left;
-    margin: 20px;
+    margin: 0px;
 }
 .comment-vote-form button {
     width: 40px;
@@ -393,6 +381,11 @@ iframe {
     text-align: left;
     position: relative;
 }
+.meme-box .likes-box {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
 .meme-box .delete-form {
     position: absolute;
     margin: 0px;
@@ -400,18 +393,14 @@ iframe {
     right: 30px;
 }
 .meme-box .vote-form {
-    display: absolute;
-    float: left;
-}
-.meme-box .likes {
-    display: absolute;
-    float: right;
+    position: absolute;
+    bottom: 20px;
 }
 .meme-box h2 {
     text-align: center;
     width: 55%;
     margin: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .meme-box p {
     margin: 0px;
@@ -422,18 +411,29 @@ iframe {
     margin: 0px;
 }
 .meme-box img {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 20px;
     border-radius: 4px;
     width: 100%;
     opacity: 1;
 }
-.memes-view {
-    width: 100%;
-}
 .memeview {
     display: grid;
     grid-template-columns: auto auto auto;
+}
+.memes-form {
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.memeform form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+.memeform form input {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .edit-form {
     position: absolute;
@@ -452,16 +452,6 @@ iframe {
 .edit-form button:hover {
     opacity: 1;
 }
-.edit-box {
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-    width: 90%;
-    margin-block-end: 0px;
-}
-.edit-box button {
-    margin: 30px;
-}
 .delete-form button {
     width: 60px;
     height: 20px;
@@ -478,8 +468,8 @@ iframe {
     margin: 0px;
 }
 .vote-form button {
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     background-color: unset;
     border: unset;
     border-radius: unset;

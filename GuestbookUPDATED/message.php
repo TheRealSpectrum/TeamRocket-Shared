@@ -7,18 +7,17 @@
     }
     // Welkomst tekst voor de ingelogde user.
 ?>
-<section class="message-form">
-    <h2>Leave a message</h2>
-    <div class="messageform">
+
+<section class="messageform">
     <?php
-    echo    "<form action='includes/message.inc.php' method='post'>
+    echo    "<h2>Leave a message</h2>
+            <form action='includes/message.inc.php' method='post'>
             <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea name='message'></textarea>
             <button type='submit' name='submit'>Post</button>
             </form>";
     ?>
-    </div>
 </section>
 
 <?php

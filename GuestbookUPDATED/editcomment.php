@@ -1,11 +1,14 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>SpaceBook</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-<body>
-    <h2>Edit your comment.</h2>
+<?php include_once 'header.php'; ?>
+<?php include_once 'includes/dbh.inc.php'; ?>
+<?php include_once 'includes/functions.inc.php'; ?>
+
+<?php
+    if (isset($_SESSION["useruid"])) {
+        echo "<div class='usergreet'><p>Your are logged in as: " . $_SESSION["useruid"] . "<br>Welcome!</p></div>";
+    }
+    // Welkomst tekst voor de ingelogde user.
+?>
+
 <?php
 
 $cid = $_POST["cid"];
@@ -13,10 +16,8 @@ $uid = $_POST["uid"];
 $date = $_POST["date"];
 $message = $_POST["message"];
 
-require_once 'dbh.inc.php';
-require_once 'functions.inc.php';
-
 echo    "<form class='edit-box' action='".editComments($conn)."' method='post'>
+        <h2>Edit your message</h2>
         <input type='hidden' name='cid' value='".$cid."'>
         <input type='hidden' name='uid' value='".$uid."'>
         <input type='hidden' name='date' value='".$date."'>
@@ -26,5 +27,4 @@ echo    "<form class='edit-box' action='".editComments($conn)."' method='post'>
 
 ?>
 
-</body>
-</html>
+<?php include_once 'footer.php'; ?>

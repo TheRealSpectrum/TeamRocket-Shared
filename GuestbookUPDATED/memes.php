@@ -25,15 +25,6 @@
     </div>
 </section>
 
-<section class="memes-View">
-    <h2>Submitted Memes</h2>
-    <div class="memeview">
-    <?php
-    getMemes($conn);
-    ?>
-    </div>
-</section>
-
 <?php
     if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
@@ -41,5 +32,9 @@
         }
     }
 ?>
+
+<section class="memeview">
+    <?php getMemes($conn); ?>
+</section>
 
 <?php include_once 'footer.php'; ?>

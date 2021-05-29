@@ -133,11 +133,12 @@ function getComments($conn) {
             echo "<div class='comment-box'>";
             echo "<h2>" . $row2['usersUid'] . "</h2>";
             echo "<h4>" . $row['date'] . "</h4>";
-            echo "<p>" . $row['message'] . "</p>";
-            echo "<p class='likes'>Likes: " . $row['likecount'] . "</p>";
+            echo nl2br ("<p>" . $row['message'] . "</p>");
+            echo "<div class='likes-box'>
+            <p>Likes: " . $row['likecount'] . "</p></div>";
             if (isset($_SESSION['useruid'])) {
                 if ($_SESSION['useruid'] == $row2['usersUid']) {
-                    echo "<form class='edit-form' method='POST' action='includes/editcomment.inc.php'>
+                    echo "<form class='edit-form' method='POST' action='editcomment.php'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>
                         <input type='hidden' name='uid' value='".$row['uid']."'>
                         <input type='hidden' name='date' value='".$row['date']."'>
@@ -194,7 +195,8 @@ function getMemes($conn) {
             echo "<h2>" . $row2['usersUid'] . "</h2>";
             echo "<h4>" . $row['date'] . "</h4>";
             echo "<img src='" . $row['link'] . "'>";
-            echo "<p class='likes'>Likes: " . $row['likecount'] . "</p>";
+            echo "<div class='likes-box'>
+            <p>Likes: " . $row['likecount'] . "</p></div>";
             if (isset($_SESSION['useruid'])) {
                 if ($_SESSION['useruid'] == $row2['usersUid']) {
                     echo "<form class='delete-form' method='POST' action='includes/deletememe.inc.php'>
@@ -287,6 +289,7 @@ function editVotes($conn) {
 }
 // Veranderd de meme votecount in de database als je op de up of downvote drukt.
 function editCommentvotes($conn) {
+    $result = '';
     if (isset($_POST['upvote'])) {
 
         $upvote = $_POST["upvote"];
