@@ -138,7 +138,7 @@ function getComments($conn) {
             <p>Likes: " . $row['likecount'] . "</p></div>";
             if (isset($_SESSION['useruid'])) {
                 if ($_SESSION['useruid'] == $row2['usersUid']) {
-                    echo "<form class='edit-form' method='POST' action='editcomment.php'>
+                    echo "<form class='comment-edit-form' method='POST' action='editcomment.php'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>
                         <input type='hidden' name='uid' value='".$row['uid']."'>
                         <input type='hidden' name='date' value='".$row['date']."'>
@@ -159,11 +159,7 @@ function getComments($conn) {
                     </button>
                   </form>";
                 } else {
-                    echo "<form class='comment-reply-form' method='POST' action='includes/reply.inc.php'>
-                        <input type='hidden' name='cid' value='".$row['cid']."'>
-                        <button type='submit' name='commentDelete'>Reply</button>
-                        </form>";
-                        echo "<form class='comment-vote-form' method='POST' action='includes/commentvotes.inc.php'>
+                    echo "<form class='comment-vote-form' method='POST' action='includes/commentvotes.inc.php'>
                         <input type='hidden' name='id' value='".$row['cid']."'>
                         <button type='submit' name='upvote'>
                             <i class='far fa-thumbs-up'></i>
@@ -174,7 +170,7 @@ function getComments($conn) {
                       </form>";
                 }
             } else {
-                echo "<p class='commentmessage'>You need to be logged in to reply or vote!</p>";
+                echo "<p class='commentmessage'>You need to be logged in to delete, edit or vote!</p>";
             }
             echo "</div>";
         }

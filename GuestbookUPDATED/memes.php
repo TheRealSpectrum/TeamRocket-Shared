@@ -11,7 +11,6 @@
 ?>
 <section class="memes-form">
     <h2>Share memes</h2>
-    <div class="memeform">
     <?php
     echo    "<form action='includes/memes.inc.php' method='post'>
             <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
@@ -22,7 +21,6 @@
     // Meme form met datum en foutmeldingen.
     // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
-    </div>
 </section>
 
 <?php

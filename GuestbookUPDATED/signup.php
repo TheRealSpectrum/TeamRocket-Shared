@@ -1,8 +1,7 @@
 <?php include_once 'header.php'; ?>
 
-<section class="signup-form">
-    <h2>Sign up</h2>
-    <div class="signup">
+    <section class="signup-form">
+        <h2>Sign up</h2>
         <form action="includes/signup.inc.php" method="post">
             <input type="text" name="name" placeholder="Full name...">
             <input type="text" name="email" placeholder="Email...">
@@ -11,7 +10,8 @@
             <input type="password" name="pwdrepeat" placeholder="Repeat password...">
             <button type="submit" name="submit">Sign up</button>
         </form>
-    </div>
+    </section>
+
     <?php
 
     if (isset($_GET["error"])) {
@@ -37,6 +37,5 @@
     // Signup form met foutmeldingen.
     // zodra er op de knop is gedrukt linked deze door naar andere code met functionaliteit.
     ?>
-</section>
 
 <?php include_once 'footer.php'; ?>
