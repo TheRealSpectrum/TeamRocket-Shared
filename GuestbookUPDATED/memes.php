@@ -10,9 +10,9 @@
     // Welkomst tekst voor de ingelogde user.
 ?>
 <section class="memes-form">
-    <h2>Share memes</h2>
     <?php
     echo    "<form action='includes/memes.inc.php' method='post'>
+            <h2>Share memes</h2>
             <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <input type='url' name='link' placeholder='Insert url here...'>

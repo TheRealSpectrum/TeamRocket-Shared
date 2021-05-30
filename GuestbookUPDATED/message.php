@@ -10,8 +10,8 @@
 
 <section class="messageform">
     <?php
-    echo    "<h2>Leave a message</h2>
-            <form action='includes/message.inc.php' method='post'>
+    echo    "<form action='includes/message.inc.php' method='post'>
+            <h2>Leave a message</h2>
             <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea name='message'></textarea>

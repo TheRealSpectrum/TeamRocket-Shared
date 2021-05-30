@@ -299,6 +299,9 @@ iframe {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.edit-box textarea {
+    margin-bottom: 30px;
+}
 .comment-edit-form {
     margin: 0px;
     padding: 0px;

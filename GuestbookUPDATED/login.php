@@ -1,8 +1,8 @@
 <?php include_once 'header.php'; ?>
 
 <section class="login-form">
-    <h2>Log in</h2>
     <form action="includes/login.inc.php" method="post">
+        <h2>Log in</h2>
         <input type="text" name="uid" placeholder="Username/Email...">
         <input type="password" name="password" placeholder="Password...">
         <button type="submit" name="submit">Log in</button>
