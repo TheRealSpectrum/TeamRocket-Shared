@@ -283,6 +283,45 @@ iframe {
 .usergreet p {
     color: white;
 }
+.messages {
+    width: 100%;
+}
+.reply-box {
+    width: 95%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+    position: relative;
+}
+.reply-box .likes-box {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+}
+.reply-box p {
+    margin: 0px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.reply-box h2 {
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+    margin: 0px;
+    background-size: 1400px 300px;
+}
+.reply-box h4 {
+    text-align: left;
+    width: 100%;
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.reply-box button {
+    margin: 0px;
+}
 .messageform {
     width: 40%;
     margin-top: 20px;
@@ -373,9 +412,6 @@ iframe {
     position: absolute;
     right: 40px;
     bottom: 30px;
-}
-.comment-box .likes-box p {
-    margin: 0px;
 }
 .comment-box p {
     margin: 0px;
