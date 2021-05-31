@@ -13,7 +13,7 @@
 <?php
 
 $cid = $_POST["cid"];
-$uid = $_POST["uid"];
+$uid = $_SESSION["userid"];
 $date = $_POST["date"];
 
 echo    "<form class='edit-box' action='".replyComments($conn)."' method='post'>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2021 at 02:10 PM
+-- Generation Time: May 31, 2021 at 06:53 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -54,6 +54,21 @@ CREATE TABLE `memes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `replies`
+--
+
+CREATE TABLE `replies` (
+  `id` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `uid` varchar(256) NOT NULL,
+  `date` datetime NOT NULL,
+  `message` varchar(256) NOT NULL,
+  `likecount` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -71,7 +86,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES
 (12, 'Matthew Wildhagen', 'mwildhagen@hotmail.com', 'Matt', '$2y$10$cOgB4XN.OyBeXP93FDyOsO0TV/noefsDh.Hv1X8MUcOUe0BsvaOla'),
-(13, 'Jesse James', 'jj@gmail.com', 'Jesse', '$2y$10$S61oRdvdi4i4qPJfIo.aeOaUJFdCfZj/EVPPUjRw1XuUITXkKjZL6');
+(13, 'Jesse James', 'jj@gmail.com', 'Jesse', '$2y$10$S61oRdvdi4i4qPJfIo.aeOaUJFdCfZj/EVPPUjRw1XuUITXkKjZL6'),
+(16, 'Jantje Jan', 'Niets@niets.com', 'Jantje', '$2y$10$hKax8lmn2T5RGMhTiRx4rebGYSQBBMtbPIduLctrwqPQONyov182q');
 
 --
 -- Indexes for dumped tables
@@ -90,6 +106,12 @@ ALTER TABLE `memes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `replies`
+--
+ALTER TABLE `replies`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -103,19 +125,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `memes`
 --
 ALTER TABLE `memes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+
+--
+-- AUTO_INCREMENT for table `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

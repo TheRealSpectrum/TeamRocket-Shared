@@ -177,10 +177,62 @@ function getComments($conn) {
                         </form>";
                 }
             } else {
-                echo "<p class='commentmessage'>You need to be logged in to delete, edit or vote!</p>";
+                echo "<p class='commentmessage'>You need to be logged in to edit posts!</p>";
             }
             echo "</div>";
-            getReplies($conn);
+            $cid = $row['cid'];
+            $sql3 = "SELECT * FROM replies WHERE cid='$cid' ORDER BY likecount DESC";
+            $result3 = $conn->query($sql3);
+            while ($row3 = $result3->fetch_assoc()) {
+                $uid = $row3['uid'];
+                $sql4 = "SELECT * FROM users WHERE usersId='$uid'";
+                $result4 = $conn->query($sql4);
+                if ($row4 = $result4->fetch_assoc()) {
+                echo "<div class='reply-box'>";
+                echo "<h2>" . $row4['usersUid'] . "</h2>";
+                echo "<h4>" . $row3['date'] . "</h4>";
+                echo nl2br ("<p>" . $row3['message'] . "</p>");
+                echo "<div class='likes-box'>
+                <p>Likes: " . $row3['likecount'] . "</p></div>";
+                if (isset($_SESSION['useruid'])) {
+                    if ($_SESSION['useruid'] == $row4['usersUid']) {
+                        echo "<form class='comment-edit-form' method='POST' action='editreply.php'>
+                            <input type='hidden' name='id' value='".$row3['id']."'>
+                            <input type='hidden' name='uid' value='".$row3['uid']."'>
+                            <input type='hidden' name='date' value='".$row3['date']."'>
+                            <input type='hidden' name='message' value='".$row3['message']."'>
+                            <button type='submit' name='commentEdit'>Edit</button>
+                        </form>
+                        <form class='comment-delete-form' method='POST' action='includes/deletereply.inc.php'>
+                            <input type='hidden' name='id' value='".$row3['id']."'>
+                            <button type='submit' name='commentDelete'>Delete</button>
+                        </form>";
+                        echo "<form class='comment-vote-form' method='POST' action='includes/replyvotes.inc.php'>
+                        <input type='hidden' name='id' value='".$row3['id']."'>
+                        <button type='submit' name='upvote'>
+                            <i class='far fa-thumbs-up'></i>
+                        </button>
+                        <button type='submit' name='downvote' class='red'>
+                            <i class='far fa-thumbs-down'></i>
+                        </button>
+                      </form>";
+                    } else {
+                        echo "<form class='comment-vote-form' method='POST' action='includes/replyvotes.inc.php'>
+                            <input type='hidden' name='id' value='".$row3['id']."'>
+                            <button type='submit' name='upvote'>
+                                <i class='far fa-thumbs-up'></i>
+                            </button>
+                            <button type='submit' name='downvote' class='red'>
+                                <i class='far fa-thumbs-down'></i>
+                            </button>
+                            </form>";
+                    }
+                } else {
+                    echo "<p class='commentmessage'>You need to be logged in to edit posts!</p>";
+                }
+                echo "</div>";
+                }
+            }
             echo "</div>";
         }
     }
@@ -188,24 +240,6 @@ function getComments($conn) {
 // Geeft de berichten vanuit de database weer.
 // berichten hebben een edit en een delete button.
 // berichten zijn gebonden aan logged in user.
-function getReplies($conn) {
-    $sql = "SELECT * FROM replies ORDER BY likecount DESC";
-    $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc()) {
-        $id = $row['uid'];
-        $sql2 = "SELECT * FROM users WHERE usersId='$id'";
-        $result2 = $conn->query($sql2);
-        if ($row2 = $result2->fetch_assoc()) {
-            echo "<div class='reply-box'>";
-            echo "<h2>" . $row2['usersUid'] . "</h2>";
-            echo "<h4>" . $row['date'] . "</h4>";
-            echo nl2br ("<p>" . $row['message'] . "</p>");
-            echo "<div class='likes-box'>
-            <p>Likes: " . $row['likecount'] . "</p></div>";
-             echo "</div>";
-        }
-    }
-}
 function getMemes($conn) {
     $sql = "SELECT * FROM memes ORDER BY likecount DESC";
     $result = $conn->query($sql);
@@ -269,11 +303,25 @@ function editComments($conn) {
     }
 }
 // Edit gemaakte berichten in de database.
+function editReply($conn) {
+    if (isset($_POST['commentSubmit'])) {
+
+        $id = $_POST["id"];
+        $uid = $_POST["uid"];
+        $date = $_POST["date"];
+        $message = $_POST["message"];
+
+        $sql = "UPDATE replies SET message='$message' WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    }
+}
+// Edit gemaakte replies in de database.
 function replyComments($conn) {
     if (isset($_POST['commentSubmit'])) {
 
         $cid = $_POST["cid"];
-        $uid = $_POST["uid"];
+        $uid = $_SESSION["userid"];
         $date = $_POST["date"];
         $message = $_POST["message"];
 
@@ -291,7 +339,7 @@ function replyComments($conn) {
         exit();
     }
 }
-// Edit gemaakte berichten in de database.
+// Reply to gemaakte berichten in de database.
 function deleteComments($conn) {
     if (isset($_POST['commentDelete'])) {
 
@@ -304,6 +352,18 @@ function deleteComments($conn) {
     }
 }
 // Delete gemaakte berichten uit de database.
+function deleteReply($conn) {
+    if (isset($_POST['commentDelete'])) {
+
+        $id = $_POST["id"];
+        $uid = $_POST["usersUid"];
+
+        $sql = "DELETE FROM replies WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    }
+}
+// Delete gemaakte replies uit de database.
 function deleteMemes($conn) {
     if (isset($_POST['linkDelete'])) {
 
@@ -348,6 +408,25 @@ function editCommentvotes($conn) {
         $downvote = $_POST['downvote'];
         $id = $_POST["id"];
         $sql = "UPDATE comments SET likecount=likecount-1 WHERE cid='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    }
+}
+// Veranderd de comment votecount in de database als je op de up of downvote drukt.
+function editReplyvotes($conn) {
+    if (isset($_POST['upvote'])) {
+
+        $upvote = $_POST["upvote"];
+        $id = $_POST["id"];
+
+        $sql = "UPDATE replies SET likecount=likecount+1 WHERE id='$id'";
+        $result = $conn->query($sql);
+        header("Location: ../index.php");
+    } else if (isset($_POST['downvote'])) {
+
+        $downvote = $_POST['downvote'];
+        $id = $_POST["id"];
+        $sql = "UPDATE replies SET likecount=likecount-1 WHERE id='$id'";
         $result = $conn->query($sql);
         header("Location: ../index.php");
     }
