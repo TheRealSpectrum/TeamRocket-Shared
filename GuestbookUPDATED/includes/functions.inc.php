@@ -238,7 +238,7 @@ function getComments($conn) {
     }
 }
 // Geeft de berichten vanuit de database weer.
-// berichten hebben een edit en een delete button.
+// berichten hebben een edit en een delete button en worden gesorteerd.
 // berichten zijn gebonden aan logged in user.
 function getMemes($conn) {
     $sql = "SELECT * FROM memes ORDER BY likecount DESC";
