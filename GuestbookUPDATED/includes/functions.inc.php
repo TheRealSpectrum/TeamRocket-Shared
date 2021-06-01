@@ -238,7 +238,7 @@ function getComments($conn) {
     }
 }
 // Geeft de berichten vanuit de database weer.
-// berichten hebben een edit en een delete button en worden gesorteerd.
+// berichten hebben een edit en een delete button.
 // berichten zijn gebonden aan logged in user.
 function getMemes($conn) {
     $sql = "SELECT * FROM memes ORDER BY likecount DESC";
@@ -299,7 +299,7 @@ function editComments($conn) {
 
         $sql = "UPDATE comments SET message='$message' WHERE cid='$cid'";
         $result = $conn->query($sql);
-        header("Location: ../index.php");
+        header("Location: index.php");
     }
 }
 // Edit gemaakte berichten in de database.
@@ -328,7 +328,7 @@ function replyComments($conn) {
         $sql = "INSERT INTO replies (cid, uid, date, message) VALUES (?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../replycomment.php?error=stmtfailed");
+            header("location: replycomment.php?error=stmtfailed");
             exit();
         }
 
