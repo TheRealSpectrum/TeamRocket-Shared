@@ -107,6 +107,7 @@ function setComments($conn, $username, $date, $message) {
     header("location: ../index.php?error=none");
     exit();
 }
+// Voegt de comments die de user heeft aangemaakt  toe aan de database of geeft een error weer als dit niet lukt.
 function setUrl($conn, $username, $link, $date) {
     $sql = "INSERT INTO memes (uid, link, date) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
@@ -239,6 +240,7 @@ function getComments($conn) {
 }
 // Geeft de berichten vanuit de database weer.
 // berichten hebben een edit en een delete button.
+// Berichten hebben een up en down vote.
 // berichten zijn gebonden aan logged in user.
 function getMemes($conn) {
     $sql = "SELECT * FROM memes ORDER BY likecount DESC";
