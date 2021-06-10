@@ -15,12 +15,12 @@ use App\Models\Event;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with(['events' => Event::all()]);
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
     Route::get('/dashboard', function() {
-        return view('dashboard');
+        return view('dashboard')->with(['events' => Event::all()]);
     })->name('dashboard');
 
     Route::get('/events', function() {
