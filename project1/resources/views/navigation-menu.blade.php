@@ -13,9 +13,9 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('All upcoming events') }}
+                        {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('events') }}" :active="request()->routeIs('events')">
+                    <x-jet-nav-link href="{{ route('addevent') }}" :active="request()->routeIs('addevent')">
                         {{ __('Add an event') }}
                     </x-jet-nav-link>
                 </div>

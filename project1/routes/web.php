@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
         return view('dashboard')->with(['events' => Event::all()]);
     })->name('dashboard');
 
-    Route::get('/events', function() {
-        return view('events')->with(['events' => Event::all()]);
-    })->name('events');
+    Route::get('/addevent', function() {
+        return view('addevent')->with(['events' => Event::all()]);
+    })->name('addevent');
 });
