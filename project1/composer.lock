@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "051342541a7c7700d482d47f4acf42f6",
+    "content-hash": "6d7eb4c99e95a5df69abdc20485d2c79",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1805,6 +1805,10 @@
                 }
             ],
             "description": "A front-end framework for Laravel.",
+            "support": {
+                "issues": "https://github.com/livewire/livewire/issues",
+                "source": "https://github.com/livewire/livewire/tree/v2.4.4"
+            },
             "funding": [
                 {
                     "url": "https://github.com/calebporzio",
@@ -7978,5 +7982,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

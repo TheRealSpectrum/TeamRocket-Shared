@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
+use App\Http\Livewire\EventAddForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,15 @@ use App\Models\Event;
 */
 
 Route::get('/', function () {
-    return view('welcome')->with(['events' => Event::all()]);
+    return view('welcome');
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
     Route::get('/dashboard', function() {
-        return view('dashboard')->with(['events' => Event::all()]);
+        return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/addevent', function() {
-        return view('addevent')->with(['events' => Event::all()]);
+    Route::get('/livewire/event-add-form', function() {
+        return view('addevent');
     })->name('addevent');
 });
