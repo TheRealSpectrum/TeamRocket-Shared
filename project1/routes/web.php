@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/livewire/event-add-form', function() {
-        return view('addevent');
-    })->name('addevent');
+    Route::get('livewire.event-add-form', function() {
+        return view('livewire.event-add-form');
+    })->name('livewire.event-add-form');
 });

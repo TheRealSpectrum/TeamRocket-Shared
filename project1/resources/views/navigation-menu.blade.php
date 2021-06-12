@@ -15,7 +15,7 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('event-add-form') }}" :active="request()->routeIs('event-add-form')">
+                    <x-jet-nav-link href="{{ route('livewire.event-add-form') }}" :active="request()->routeIs('livewire.event-add-form')">
                         {{ __('Add an event') }}
                     </x-jet-nav-link>
                 </div>
